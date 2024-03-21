@@ -3,13 +3,13 @@
     "name": "IAMGE TO TEST GENERATION",
     "icons": [
       {
-        "src": "assests/icon.png",
-        "type": "image/png",
+        "src": "assests/icon.jpg",
+        "type": "image/jpg",
         "sizes": "192x192"
       },
       {
-        "src": "assests/icon.png",
-        "type": "image/png",
+        "src": "assests/icon.jpg",
+        "type": "image/jpg",
         "sizes": "512x512"
       }
     ],
