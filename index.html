@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMAGE-SPEECH</title>
-    <script>
-  if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-      };
-    </script>
+      <link rel="manifest" href="manifest.json">
+  <script>
+        //if browser support service worker
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
+  </script>
   
     <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
     <style>
