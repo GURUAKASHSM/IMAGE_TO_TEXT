@@ -1,15 +1,15 @@
 {
-    "short_name": "VISIONARY AUDIO HUB",
-    "name": "IAMGE TO TEST GENERATION",
+    "short_name": "Audio HUB",
+    "name": "Audio HUB",
     "icons": [
       {
-        "src": "assests/icon.jpg",
-        "type": "image/jpg",
+        "src": "/logo.png",
+        "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "assests/icon.jpg",
-        "type": "image/jpg",
+        "src": "/logo.png",
+        "type": "image/png",
         "sizes": "512x512"
       }
     ],
