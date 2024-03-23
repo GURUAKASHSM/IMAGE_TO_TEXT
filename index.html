@@ -18,458 +18,852 @@
   </script>
   
     <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
-    <style>
+    <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
+        <style>
+            /* Set the background color to dark black */
+            body {
+                background-color: #000;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
 
-        /* Set the background color to dark black */
-        body {
-            background-color: #000;
-            /* Dark black background color */
-            color: #fff;
-            /* Text color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            /* Use a sans-serif font */
-        }
+            h1,
+            form {
+                text-align: center;
+            }
 
-        h1,
-        form {
-            text-align: center;
-        }
-
-        form {
-            background-color: #333;
-            /* Dark gray background for the form */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* Box shadow for a card-like effect */
-        }
+            form {
+                background-color: #333;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 30rem;
+            }
 
 
-        h1 {
-            color: #337ab7;
-            /* Blue title color */
-        }
+            h1 {
+                color: #337ab7;
+            }
 
-        input[type="file"] {
-            border: 2px solid #337ab7;
-            /* Blue border for the file input */
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #f0f0f0;
-            /* Light gray background for the input */
-            color: #333;
-            /* Dark gray text color for the input */
-        }
+            input[type="file"] {
+                border: 2px solid #337ab7;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #f0f0f0;
+                color: #333;
+            }
 
-        .live-input-image {
-            max-width: 100%;
-            max-height: 400px;
-            /* You can adjust the max height as needed */
-            margin-top: 20px;
-        }
+            .live-input-image {
+                max-width: 100%;
+                max-height: 400px;
+                margin-top: 20px;
+            }
 
-        input[type="submit"] {
-            background-color: #337ab7;
-            /* Blue background for the submit button */
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            /* Bold text for the button */
-        }
+            input[type="submit"] {
+                background-color: #337ab7;
+                color: #fff;
+                padding: 12px 20px;
+                border: none;
+                cursor: pointer;
+                margin-top: 10px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
 
-        #signup-button {
-            background-color: #337ab7;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 25px;
-            font-weight: bold;
-            margin: 10px;
-            /* Add some space between buttons */
-            position: absolute;
-            top: 10px;
-            /* Position at the top */
-            right: 200px;
-            /* Position at the right */
+            #signup-button {
+                background-color: #337ab7;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 25px;
+                font-weight: bold;
+                margin: 10px;
+                position: absolute;
+                top: 10px;
+                right: 200px;
+            }
 
-        }
+            #signin-button {
+                background-color: #337ab7;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 25px;
+                font-weight: bold;
+                margin: 10px;
+                position: absolute;
+                top: 10px;
+                right: 100px;
+            }
 
-        #signin-button {
-            background-color: #337ab7;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 25px;
-            font-weight: bold;
-            margin: 10px;
-            /* Add some space between buttons */
-            position: absolute;
-            top: 10px;
-            /* Position at the top */
-            right: 100px;
-            /* Position at the right */
-        }
+            input[type="submit"]:hover {
+                background-color: #286090;
+                /* Darker blue on hover */
+            }
 
-        input[type="submit"]:hover {
-            background-color: #286090;
-            /* Darker blue on hover */
-        }
+            .logo {
+                max-width: 200px;
+                /* Set the maximum width for the logo */
+            }
 
-        .logo {
-            max-width: 200px;
-            /* Set the maximum width for the logo */
-        }
+            /* Stylish Tamil text */
+            .stylish-tamil {
+                font-size: 48px;
+                /* Larger font size */
+                font-weight: bold;
+                /* Bold text */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                /* Different font family */
+                color: #ff69b4;
+                /* Custom text color (pink) */
+            }
 
-        /* Stylish Tamil text */
-        .stylish-tamil {
-            font-size: 48px;
-            /* Larger font size */
-            font-weight: bold;
-            /* Bold text */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Different font family */
-            color: #ff69b4;
-            /* Custom text color (pink) */
-        }
+            /* Drag and Drop area */
+            .drag-drop-area {
+                border: 2px dashed #337ab7;
+                /* Dashed blue border for the drag and drop area */
+                padding: 20px;
+                margin-top: 20px;
+                border-radius: 5px;
+                text-align: center;
+            }
 
-        /* Drag and Drop area */
-        .drag-drop-area {
-            border: 2px dashed #337ab7;
-            /* Dashed blue border for the drag and drop area */
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
+            .drag-drop-area p {
+                margin: 0;
+            }
 
-        .drag-drop-area p {
-            margin: 0;
-        }
+            /* Align labels and radio buttons horizontally */
+            .language-label {
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-        /* Align labels and radio buttons horizontally */
-        .language-label {
-            display: inline-block;
-            margin-right: 10px;
-        }
+            .language-radio {
+                display: inline-block;
+            }
 
-        .language-radio {
-            display: inline-block;
-        }
+            /* Style for the signup and signin forms */
+            .auth-form {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #333;
+                /* Dark gray background for the form */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                /* Box shadow for a card-like effect */
+                width: 300px;
+                /* Set the width of the form */
+                text-align: left;
+                /* Align form content to the left */
+            }
 
-        /* Style for the signup and signin forms */
-        .auth-form {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #333;
-            /* Dark gray background for the form */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* Box shadow for a card-like effect */
-            width: 300px;
-            /* Set the width of the form */
-            text-align: left;
-            /* Align form content to the left */
-        }
+            .auth-form label {
+                display: block;
+                margin-bottom: 10px;
+                color: #fff;
+                /* Label text color */
+            }
 
-        .auth-form label {
-            display: block;
-            margin-bottom: 10px;
-            color: #fff;
-            /* Label text color */
-        }
+            .auth-form input[type="text"],
+            .auth-form input[type="password"],
+            .auth-form input[type="email"] {
+                width: 90%;
+                /* Full width for input fields */
+                padding: 10px;
+                border: 2px solid #337ab7;
+                border-radius: 7px;
+                background-color: #f0f0f0;
+                color: #333;
+                margin-bottom: 10px;
+            }
 
-        .auth-form input[type="text"],
-        .auth-form input[type="password"],
-        .auth-form input[type="email"] {
-            width: 90%;
-            /* Full width for input fields */
-            padding: 10px;
-            border: 2px solid #337ab7;
-            border-radius: 7px;
-            background-color: #f0f0f0;
-            color: #333;
-            margin-bottom: 10px;
-        }
+            .auth-form input[type="button"] {
+                background-color: #337ab7;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                font-weight: bold;
+                float: right;
+                /* Float the button to the right */
+            }
 
-        .auth-form input[type="button"] {
-            background-color: #337ab7;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            float: right;
-            /* Float the button to the right */
-        }
+            .text-box {
+                width: 80%;
+                padding: 10px;
+                border: 2px solid #337ab7;
+                border-radius: 7px;
+                background-color: #f0f0f0;
+                color: #333;
+                margin-bottom: 10px;
+                font-size: 16px;
+                /* You can adjust the font size as needed */
+                height: 20%;
+            }
 
-        .text-box {
-            width: 63%;
-            padding: 10px;
-            border: 2px solid #337ab7;
-            border-radius: 7px;
-            background-color: #f0f0f0;
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 16px;
-            /* You can adjust the font size as needed */
-            height: 20%;
-        }
+            .auth-form input[type="button"]:hover {
+                background-color: #286090;
+            }
 
-        .auth-form input[type="button"]:hover {
-            background-color: #286090;
-        }
+            .auth-form p {
+                text-align: center;
+                /* Center-align the "Don't have an account?" link */
+                margin-top: 10px;
+            }
 
-        .auth-form p {
-            text-align: center;
-            /* Center-align the "Don't have an account?" link */
-            margin-top: 10px;
-        }
+            .home-symbol {
+                position: absolute;
+                top: 7;
+                left: 10;
+                cursor: pointer;
+                size: 3cm;
+            }
 
-        .home-symbol {
-            position: absolute;
-            top: 7;
-            left: 10;
-            cursor: pointer;
-            size: 3cm;
-        }
+            .home-symbol p {
+                font-size: 27px;
+            }
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-        .home-symbol p {
-            font-size: 27px;
-        }
-    </style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-family: 'Montserrat', sans-serif;
+                margin: -20px 0 50px;
+            }
+
+            h1 {
+                font-weight: bold;
+                margin: 0;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 100;
+                line-height: 20px;
+                letter-spacing: 0.5px;
+                margin: 20px 0 30px;
+            }
+
+            span {
+                font-size: 12px;
+            }
+
+            a {
+                color: #333;
+                font-size: 14px;
+                text-decoration: none;
+                margin: 15px 0;
+            }
+
+            button {
+                border-radius: 20px;
+                border: 1px solid #333;
+                background-color: #333;
+                color: #FFFFFF;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 12px 45px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+            }
+
+            button:active {
+                transform: scale(0.95);
+            }
+
+            button:focus {
+                outline: none;
+            }
+
+            button.ghost {
+                background-color: transparent;
+                border-color: #FFFFFF;
+            }
+
+            .signform {
+                background-color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 50px;
+                height: 100%;
+                text-align: center;
+                margin-left: -50px;
+            }
+
+            .signinput {
+                background-color: #eee;
+                border: none;
+                padding: 12px 15px;
+                margin: 8px 0;
+                width: 70%;
+            }
+
+            .container {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                    0 10px 10px rgba(0, 0, 0, 0.22);
+                position: relative;
+                overflow: hidden;
+                width: 768px;
+                max-width: 100%;
+                min-height: 480px;
+            }
+
+            .form-container {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                transition: all 0.6s ease-in-out;
+            }
+
+            .sign-in-container {
+                left: 0;
+                width: 50%;
+                z-index: 2;
+            }
+
+            .container.right-panel-active .sign-in-container {
+                transform: translateX(100%);
+            }
+
+            .sign-up-container {
+                left: 0;
+                width: 50%;
+                opacity: 0;
+                z-index: 1;
+            }
+
+            .container.right-panel-active .sign-up-container {
+                transform: translateX(100%);
+                opacity: 1;
+                z-index: 5;
+                animation: show 0.6s;
+            }
+
+            @keyframes show {
+
+                0%,
+                49.99% {
+                    opacity: 0;
+                    z-index: 1;
+                }
+
+                50%,
+                100% {
+                    opacity: 1;
+                    z-index: 5;
+                }
+            }
+
+            .overlay-container {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                transition: transform 0.6s ease-in-out;
+                z-index: 100;
+            }
+
+            .container.right-panel-active .overlay-container {
+                transform: translateX(-100%);
+            }
+
+            .overlay {
+                background: #333;
+                background: -webkit-linear-gradient(to right, #333, #837f7f);
+                background: linear-gradient(to right, #333, #797272);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 0 0;
+                color: #FFFFFF;
+                position: relative;
+                left: -100%;
+                height: 100%;
+                width: 200%;
+                transform: translateX(0);
+                transition: transform 0.6s ease-in-out;
+            }
+
+            .container.right-panel-active .overlay {
+                transform: translateX(50%);
+            }
+
+            .overlay-panel {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 40px;
+                text-align: center;
+                top: 0;
+                height: 100%;
+                width: 50%;
+                transform: translateX(0);
+                transition: transform 0.6s ease-in-out;
+            }
+
+            .overlay-left {
+                transform: translateX(-20%);
+            }
+
+            .container.right-panel-active .overlay-left {
+                transform: translateX(0);
+            }
+
+            .overlay-right {
+                right: 0;
+                transform: translateX(0);
+            }
+
+            .container.right-panel-active .overlay-right {
+                transform: translateX(20%);
+            }
+
+            .social-container {
+                margin: 20px 0;
+            }
+
+            .social-container a {
+                border: 1px solid #DDDDDD;
+                border-radius: 50%;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 5px;
+                height: 40px;
+                width: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-XrlRqfzd7cwbTpoK3mL92Gvpr5Y6UQyKcJvX0+AexBu6BiCZPlYIWt+EifVHJyAdHb+/ZymD0w9es2NTkYq5rA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .navigation {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 120px;
+                height: 60px;
+                background: #333;
+                box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                transition: height 0.5s, width 0.5s;
+                transition-delay: 0s, 0.75s;
+                overflow: hidden;
+            }
+
+            .navigation.active {
+                width: 200px;
+                height: 350px;
+                transition: width 0.5s, height 0.5s;
+                transition-delay: 0s, 0.75s;
+            }
+
+            .navigation .userBx {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                background: #000;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                transition: 0.5s;
+                transition-delay: 0.5s;
+            }
+
+            .navigation.active .userBx {
+                width: calc(100% - 60px);
+                transition-delay: 0s;
+            }
+
+            .navigation .userBx .username {
+                white-space: nowrap;
+                color: white;
+                font-size: 1.1em;
+            }
+
+            .navigation .userBx .imgBx {
+                position: relative;
+                min-width: 60px;
+                height: 60px;
+                overflow: hidden;
+                background: #000;
+                border-radius: 50%;
+                border: 10px solid #000;
+            }
+
+            .navigation .userBx .imgBx img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                
+            }
+
+            /* Hamburguer toggle menu */
+
+            .navigation .menuToggle {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                background: #000;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navigation .menuToggle::before {
+                content: "";
+                position: absolute;
+                width: 32px;
+                height: 2px;
+                background: white;
+                transform: translateY(-10px);
+                box-shadow: 0 10px white;
+                transition: 0.5s;
+            }
+
+            .navigation .menuToggle::after {
+                content: "";
+                position: absolute;
+                width: 32px;
+                height: 2px;
+                background: white;
+                transform: translateY(10px);
+                transition: 0.5s;
+                border-radius: 5px;
+            }
+
+            .navigation.active .menuToggle::before {
+                transform: translateY(0px) rotate(45deg);
+                box-shadow: 0 0 white;
+                border-radius: 5px;
+            }
+
+            .navigation.active .menuToggle::after {
+                transform: translateY(0px) rotate(-45deg);
+                border-radius: 5px;
+            }
+
+            .menu {
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 60px);
+                margin-top: 60px;
+                padding: 20px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+            }
+
+            .menu li {
+                list-style: none;
+            }
+
+            .menu li a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 20px 0;
+                font-size: 1em;
+                text-decoration: none;
+                color: white;
+            }
+
+            .menu li a:hover {
+                font-size: larger;
+                font-weight: 600;
+            }
+
+            .menu li a ion-icon {
+                font-size: 1.5em;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-XrlRqfzd7cwbTpoK3mL92Gvpr5Y6UQyKcJvX0+AexBu6BiCZPlYIWt+EifVHJyAdHb+/ZymD0w9es2NTkYq5rA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <!-- <button id="signin-button" onclick="showSignInForm()">Sign In</button>
-    <button id="signup-button" onclick="showSignUpForm()">Sign Up</button> -->
-
-    <!-- Signup form initially hidden -->
-    <form class="auth-form" id="signup-form">
-
-        <div class="home-symbol" onclick="location.reload()">
-            <p> 🏠</p>
+     <div class="navigation">
+        <div class="userBx">
+            <div class="imgBx">
+                <img src="https://i.pinimg.com/736x/07/66/d1/0766d183119ff92920403eb7ae566a85.jpg" alt="user avatar" />
+            </div>
+            <p class="username">GURU</p>
         </div>
-        <h1>Signup</h1>
+        <div class="menuToggle" ></div>
+        <ul class="menu" style="cursor: pointer;">
 
-        <label for="signup-username">Username:</label>
-        <input type="text" id="signup-username" name="signup-username" required>
-        <label for="signup-email">Email:</label>
-        <input type="email" id="signup-email" name="signup-email" required>
-        <label for="signup-password">Password:</label>
-        <input type="password" id="signup-password" name="signup-password" required>
-        <input type="button" value="Submit" onclick="signUp()">
-    </form>
-
-    <!-- Signin form initially hidden -->
-    <form class="auth-form" id="signin-form">
-        <div class="home-symbol" onclick="location.reload()">
-            <p> 🏠</p>
-        </div>
-        <h1>Login</h1>
-
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="button" value="Sign In" onclick="signIn()">
-    </form>
-
-    <form id="content" action="https://192.168.128.238:5000/process" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-        <h1>SPEECH FORM IMAGE & TEXT</h1>
-        <input type="file" name="image" accept=".png, .jpg, .jpeg">
-        <br>
-        <br>
-        <!-- Input field for user-provided text -->
-        <textarea class="text-box" name="user_text" rows="4" cols="50" placeholder="Enter text..."></textarea>
-        <br>
-
-        <h3 style="padding-right: 70%;">Language:</h3>
-        <!-- Language Selection Radio Buttons -->
-        <label class="language-label" for="tamil">Tamil</label>
-        <input class="language-radio" type="radio" id="tamil" name="language" value="ta">
-        <label class="language-label" for="english">English</label>
-        <input class="language-radio" type="radio" id="english" name="language" value="en" checked>
-        <label class="language-label" for="hindi">Hindi</label>
-        <input class="language-radio" type="radio" id="hindi" name="language" value="hi">
-        <br>
-        <br>
-        <input type="submit" value="Convert">
-    </form>
-
-    <div class="drag-drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
-        ondragleave="handleDragLeave(event)">
-        <p>Drag and drop files here to upload</p>
+        </ul>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let menuToggle = document.querySelector(".menuToggle");
+        let navigation = document.querySelector(".navigation");
+        menuToggle.onclick = function () {
+            navigation.classList.toggle("active");
+        };
+    </script>
+
+    <div class="container" id="container" style="display: none;margin-top: 100px;">
+        <div class="form-container sign-up-container">
+            <form action="#" class="signform">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input class="signinput" type="text" placeholder="Name" />
+                <input class="signinput" type="email" placeholder="Email" />
+                <input class="signinput" type="password" placeholder="Password" />
+                <input class="signinput" type="file" name="image" accept=".png, .jpg, .jpeg"
+                    style="height: 35px;padding: 5px">
+                <button style="margin-top: 20px;">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#" class="signform">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input class="signinput" type="email" placeholder="Email" />
+                <input class="signinput" type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+
+    <div class="hub-container" style="display: block;margin-top: 120px;">
+        <form id="content" action="https://192.168.128.238:5000/process" method="POST" enctype="multipart/form-data"
+            onsubmit="return validateForm()">
+            <h1>VISIONARY AUDIO HUB</h1>
+            <input type="file" name="image" accept=".png, .jpg, .jpeg"
+                style="width: 80%;margin-top: 40px;margin-bottom: 10px;height: 65px;padding: 20px;" id="inputimage">
+            <br>
+            <br>
+            <!-- Input field for user-provided text -->
+            <textarea class="text-box" name="user_text" rows="6" cols="50" placeholder="Enter text..."></textarea>
+            <br>
+
+            <h3 style="padding-right: 70%;">Language:</h3>
+            <!-- Language Selection Radio Buttons -->
+            <input class="language-radio" type="radio" id="tamil" name="language" value="ta">
+            <label class="language-label" for="tamil">Tamil</label>
+
+            <input class="language-radio" type="radio" id="english" name="language" value="en" checked>
+            <label class="language-label" for="english">English</label>
+
+            <input class="language-radio" type="radio" id="hindi" name="language" value="hi">
+            <label class="language-label" for="hindi">Hindi</label>
+
+            <br>
+            <br>
+            <input type="submit" onsubmit="SubmitIntiated()" value="Convert">
+        </form>
+
+        <div class="drag-drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+            ondragleave="handleDragLeave(event)">
+            <p>Drag and drop files here to upload</p>
+        </div>
     </div>
     <script>
-        function showSignInForm() {
-            // Hide the "Sign In" button and content
-            document.getElementById('signin-button').style.display = 'none';
-            document.getElementById('content').style.display = 'none';
-
-            // Show the sign-in form
-            document.getElementById('signin-form').style.display = 'block';
-
-
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
+        function HideAll() {
+            document.querySelector(".hub-container").style.display = 'none'
+            document.querySelector(".container").style.display = 'none';
         }
-
-        // Function to handle sign-in
-        function signIn() {
-            // Get the username and password from the form
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            // Define the data structure
-            var data = {
-                email: username,
-                password: password
+        function DisplayHome() {
+            HideAll()
+            document.querySelector(".hub-container").style.display = 'block'
+        }
+        function Displayloginforms() {
+            HideAll()
+            document.querySelector(".container").style.display = 'block';
+        }
+        function Logout() {
+            localStorage.removeItem("userData")
+            //showToast("LogOut Successfull", "Success", 3)
+            CheckAlreadyLogin()
+            return
+        }
+        setInLocal("GURU", "guruakashsm@gmail.com")
+        function setInLocal(name, email) {
+            const userData = {
+                username: name,
+                email,
             };
-
-            // Convert the data to JSON
-            var jsonData = JSON.stringify(data);
-
-            // Make an HTTP POST request to the backend for sign-in
-            fetch('http://localhost:8080/signin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: jsonData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data === 1) {
-                        // Sign-in was successful, you can handle this accordingly
-                        alert("Sign-in successful.");
-                        // Now, you can display the content or take further actions
-                        document.getElementById('username').value = '';
-                        document.getElementById('password').value = '';
-                        document.getElementById('signin-button').style.display = 'none';
-                        document.getElementById('signup-button').style.display = 'none';
-                        showContent();
-                    } else {
-                        // Sign-in failed, handle it accordingly (e.g., show an error message)
-                        alert("Sign-in failed. Please check your credentials.");
-                        document.getElementById('username').value = '';
-                        document.getElementById('password').value = '';
-                        document.getElementById('signin-form').style.display = 'none';
-                        document.getElementById('signin-button').style.display = 'block';
-                        document.getElementById('signup-form').style.display = 'none';
-                        document.getElementById('content').style.display = 'block';
-
-                    }
-                })
-                .catch(error => {
-                    console.error('Network error:', error);
-                });
+            localStorage.setItem("userData", JSON.stringify(userData));
         }
 
-        // Function to show the content after successful sign-in
-        function showContent() {
-            // Display the entire content
-            document.getElementById('content').style.display = 'block';
+        CheckAlreadyLogin()
+        function CheckAlreadyLogin() {
+            const storedData = localStorage.getItem("userData");
+            let html = ""
+            if (storedData) {
+                const userData = JSON.parse(storedData);
+                html = `       
+                    <li>
+                        <a href="#"><ion-icon name="person-outline"></ion-icon>Profile</a>
+                    </li>
+                    <li>
+                        <a onclick="DisplayHome()"><ion-icon name="home-outline"></ion-icon>Home</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                        ><ion-icon name="chatbubble-outline"></ion-icon>History</a>
+                    </li>
+                    <li>
+                        <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+                    </li>
+                    <li>
+                        <a onclick="Logout()"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+                    </li>`
+            } else {
+                html = `         
+                     <li>
+                        <a onclick="Displayloginforms()"><ion-icon name="person-outline"></ion-icon>Sign In/Up</a>
+                    </li>
+                    <li>
+                        <a onclick="DisplayHome()"><ion-icon name="home-outline"></ion-icon>Home</a>
+                    </li> `
+                document.querySelector(".menu").style.maxHeight = "100px";
+                document.querySelector(".menu").style.height = "100px";
 
-            // Hide the sign-in form
-            document.getElementById('signin-form').style.display = 'none';
-        }
-
-        function showSignUpForm() {
-            // Hide the "Sign Up" button and content
-            document.getElementById('signup-button').style.display = 'none';
-            document.getElementById('content').style.display = 'none';
-
-            // Show the signup form
-            document.getElementById('signup-form').style.display = 'block';
-            document.getElementById('signin-form').style.display = 'none';
-
-            // Clear the signup form fields
-            document.getElementById('signup-username').value = '';
-            document.getElementById('signup-phone').value = '';
-            document.getElementById('signup-email').value = '';
-            document.getElementById('signup-password').value = '';
-        }
-
-        // Function to handle signup
-        function signUp() {
-            // Get the signup form field values
-            var signupUsername = document.getElementById('signup-username').value;
-            var signupEmail = document.getElementById('signup-email').value;
-            var signupPassword = document.getElementById('signup-password').value;
-
-            // Define the signup data structure
-            var signupData = {
-                username: signupUsername,
-                email: signupEmail,
-                password: signupPassword
-            };
-
-            // Convert the data to JSON
-            var jsonData = JSON.stringify(signupData);
-
-            // Make an HTTP POST request to the backend for signup
-            fetch('http://localhost:8080/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: jsonData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data === 1) {
-                        // Signup was successful, you can handle this accordingly
-                        alert("Signup successful.");
-                        // You may want to redirect or show a success message
-                    } else {
-                        // Signup failed, handle it accordingly (e.g., show an error message)
-                        alert("Signup failed. Please check your input.");
-                    }
-                })
-                .catch(error => {
-                    console.error('Network error:', error);
-                });
-        }
-
-        function validateForm() {
-            const imageInput = document.querySelector('input[type="file"]');
-            const textInput = document.querySelector('textarea[name="user_text"]');
-
-            if (imageInput.files.length > 0 && textInput.value.trim() !== '') {
-                alert("Please choose either an image or text, not both.");
-                document.querySelector('input[type="file"]').value = '';
-                document.querySelector('textarea[name="user_text"]').value = '';
-                return false; // Prevent form submission
             }
 
-            return true; // Allow form submission
+            document.querySelector(".menu").innerHTML = html;
         }
 
-        function reloadPage() {
-            location.reload();
-        }
 
+        const sellerForm = document.getElementById('content');
+        sellerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const imageFile = document.getElementById("inputimage").files[0];
+            const imageinput = document.getElementById("inputimage");
+            if (imageinput.files.length === 0) {
+                showToast("Please select an image", "Info", 1);
+                return;
+            }
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                const base64Image = btoa(new Uint8Array(reader.result).reduce((data, byte) => data + String.fromCharCode(byte), ''));// Extracting base64 data from data URL
+                const userData = {
+                    name: document.getElementById('seller-name').value,
+                    email: document.getElementById('seller-email').value,
+                    password: document.getElementById('seller-password').value,
+                    confirmpassword: document.getElementById('seller-confirm-password').value,
+                    image: ("data:image/jpeg;base64,"+base64Image),
+                };
+
+                if (userData.name == "" || userData.email == "" || userData.password == "" || userData.confirmpassword == "") {
+                    showToast("Please enter all fields before Submit", "Info", 1);
+                    return;
+                }
+                if (userData.password != userData.confirmpassword) {
+                    showToast("Password Mismatch", "Danger", 0);
+                    return;
+                }
+
+                // Send the seller data as JSON in the request body
+                fetch('http://localhost:8080/createseller', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(sellerData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        showToast('Seller created successfully.', 'Success', 3);
+                        sellerForm.reset();
+                    })
+                    .catch(error => {
+                        showToast(error, 'Error', 0);
+                    });
+            };
+
+            // Read the image file as a data URL
+            reader.readAsArrayBuffer(imageFile);
+        });
 
     </script>
+    
+
 </body>
 
 </html>
