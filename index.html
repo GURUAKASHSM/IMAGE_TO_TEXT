@@ -17,115 +17,15 @@
         };
   </script>
   
-    <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
-    <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
+     <lin rel="icon" type="image/jpg" href="templates\icon.jpg"> <!-- Added title icon -->
         <style>
             /* Set the background color to dark black */
-            body {
-                background-color: #000;
-                color: #fff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                margin: 0;
-                font-family: Arial, sans-serif;
-            }
 
             h1,
             form {
                 text-align: center;
             }
 
-            form {
-                background-color: #333;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                width: 30rem;
-            }
-
-
-            h1 {
-                color: #337ab7;
-            }
-
-            input[type="file"] {
-                border: 2px solid #337ab7;
-                border-radius: 5px;
-                padding: 10px;
-                font-size: 16px;
-                background-color: #f0f0f0;
-                color: #333;
-            }
-
-            .live-input-image {
-                max-width: 100%;
-                max-height: 400px;
-                margin-top: 20px;
-            }
-
-            input[type="submit"] {
-                background-color: #337ab7;
-                color: #fff;
-                padding: 12px 20px;
-                border: none;
-                cursor: pointer;
-                margin-top: 10px;
-                border-radius: 5px;
-                font-weight: bold;
-            }
-
-            #signup-button {
-                background-color: #337ab7;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                border-radius: 25px;
-                font-weight: bold;
-                margin: 10px;
-                position: absolute;
-                top: 10px;
-                right: 200px;
-            }
-
-            #signin-button {
-                background-color: #337ab7;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                border-radius: 25px;
-                font-weight: bold;
-                margin: 10px;
-                position: absolute;
-                top: 10px;
-                right: 100px;
-            }
-
-            input[type="submit"]:hover {
-                background-color: #286090;
-                /* Darker blue on hover */
-            }
-
-            .logo {
-                max-width: 200px;
-                /* Set the maximum width for the logo */
-            }
-
-            /* Stylish Tamil text */
-            .stylish-tamil {
-                font-size: 48px;
-                /* Larger font size */
-                font-weight: bold;
-                /* Bold text */
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                /* Different font family */
-                color: #ff69b4;
-                /* Custom text color (pink) */
-            }
 
             /* Drag and Drop area */
             .drag-drop-area {
@@ -151,56 +51,7 @@
                 display: inline-block;
             }
 
-            /* Style for the signup and signin forms */
-            .auth-form {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: #333;
-                /* Dark gray background for the form */
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                /* Box shadow for a card-like effect */
-                width: 300px;
-                /* Set the width of the form */
-                text-align: left;
-                /* Align form content to the left */
-            }
 
-            .auth-form label {
-                display: block;
-                margin-bottom: 10px;
-                color: #fff;
-                /* Label text color */
-            }
-
-            .auth-form input[type="text"],
-            .auth-form input[type="password"],
-            .auth-form input[type="email"] {
-                width: 90%;
-                /* Full width for input fields */
-                padding: 10px;
-                border: 2px solid #337ab7;
-                border-radius: 7px;
-                background-color: #f0f0f0;
-                color: #333;
-                margin-bottom: 10px;
-            }
-
-            .auth-form input[type="button"] {
-                background-color: #337ab7;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-weight: bold;
-                float: right;
-                /* Float the button to the right */
-            }
 
             .text-box {
                 width: 80%;
@@ -214,260 +65,8 @@
                 /* You can adjust the font size as needed */
                 height: 20%;
             }
-
-            .auth-form input[type="button"]:hover {
-                background-color: #286090;
-            }
-
-            .auth-form p {
-                text-align: center;
-                /* Center-align the "Don't have an account?" link */
-                margin-top: 10px;
-            }
-
-            .home-symbol {
-                position: absolute;
-                top: 7;
-                left: 10;
-                cursor: pointer;
-                size: 3cm;
-            }
-
-            .home-symbol p {
-                font-size: 27px;
-            }
         </style>
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-            * {
-                box-sizing: border-box;
-            }
-
-            body {
-                background: #000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                font-family: 'Montserrat', sans-serif;
-                margin: -20px 0 50px;
-            }
-
-            h1 {
-                font-weight: bold;
-                margin: 0;
-            }
-
-            h2 {
-                text-align: center;
-            }
-
-            p {
-                font-size: 14px;
-                font-weight: 100;
-                line-height: 20px;
-                letter-spacing: 0.5px;
-                margin: 20px 0 30px;
-            }
-
-            span {
-                font-size: 12px;
-            }
-
-            a {
-                color: #333;
-                font-size: 14px;
-                text-decoration: none;
-                margin: 15px 0;
-            }
-
-            button {
-                border-radius: 20px;
-                border: 1px solid #333;
-                background-color: #333;
-                color: #FFFFFF;
-                font-size: 12px;
-                font-weight: bold;
-                padding: 12px 45px;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                transition: transform 80ms ease-in;
-            }
-
-            button:active {
-                transform: scale(0.95);
-            }
-
-            button:focus {
-                outline: none;
-            }
-
-            button.ghost {
-                background-color: transparent;
-                border-color: #FFFFFF;
-            }
-
-            .signform {
-                background-color: #FFFFFF;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding: 0 50px;
-                height: 100%;
-                text-align: center;
-                margin-left: -50px;
-            }
-
-            .signinput {
-                background-color: #eee;
-                border: none;
-                padding: 12px 15px;
-                margin: 8px 0;
-                width: 70%;
-            }
-
-            .container {
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                    0 10px 10px rgba(0, 0, 0, 0.22);
-                position: relative;
-                overflow: hidden;
-                width: 768px;
-                max-width: 100%;
-                min-height: 480px;
-            }
-
-            .form-container {
-                position: absolute;
-                top: 0;
-                height: 100%;
-                transition: all 0.6s ease-in-out;
-            }
-
-            .sign-in-container {
-                left: 0;
-                width: 50%;
-                z-index: 2;
-            }
-
-            .container.right-panel-active .sign-in-container {
-                transform: translateX(100%);
-            }
-
-            .sign-up-container {
-                left: 0;
-                width: 50%;
-                opacity: 0;
-                z-index: 1;
-            }
-
-            .container.right-panel-active .sign-up-container {
-                transform: translateX(100%);
-                opacity: 1;
-                z-index: 5;
-                animation: show 0.6s;
-            }
-
-            @keyframes show {
-
-                0%,
-                49.99% {
-                    opacity: 0;
-                    z-index: 1;
-                }
-
-                50%,
-                100% {
-                    opacity: 1;
-                    z-index: 5;
-                }
-            }
-
-            .overlay-container {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 50%;
-                height: 100%;
-                overflow: hidden;
-                transition: transform 0.6s ease-in-out;
-                z-index: 100;
-            }
-
-            .container.right-panel-active .overlay-container {
-                transform: translateX(-100%);
-            }
-
-            .overlay {
-                background: #333;
-                background: -webkit-linear-gradient(to right, #333, #837f7f);
-                background: linear-gradient(to right, #333, #797272);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: 0 0;
-                color: #FFFFFF;
-                position: relative;
-                left: -100%;
-                height: 100%;
-                width: 200%;
-                transform: translateX(0);
-                transition: transform 0.6s ease-in-out;
-            }
-
-            .container.right-panel-active .overlay {
-                transform: translateX(50%);
-            }
-
-            .overlay-panel {
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding: 0 40px;
-                text-align: center;
-                top: 0;
-                height: 100%;
-                width: 50%;
-                transform: translateX(0);
-                transition: transform 0.6s ease-in-out;
-            }
-
-            .overlay-left {
-                transform: translateX(-20%);
-            }
-
-            .container.right-panel-active .overlay-left {
-                transform: translateX(0);
-            }
-
-            .overlay-right {
-                right: 0;
-                transform: translateX(0);
-            }
-
-            .container.right-panel-active .overlay-right {
-                transform: translateX(20%);
-            }
-
-            .social-container {
-                margin: 20px 0;
-            }
-
-            .social-container a {
-                border: 1px solid #DDDDDD;
-                border-radius: 50%;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 5px;
-                height: 40px;
-                width: 40px;
-            }
-        </style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
             integrity="sha512-XrlRqfzd7cwbTpoK3mL92Gvpr5Y6UQyKcJvX0+AexBu6BiCZPlYIWt+EifVHJyAdHb+/ZymD0w9es2NTkYq5rA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -478,8 +77,8 @@
                 right: 20px;
                 width: 120px;
                 height: 60px;
-                background: #333;
-                box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+                background: rgba(0, 0, 0, 0);
+                box-shadow: 0 25px 35px rgba(0, 0, 0, 0);
                 display: flex;
                 justify-content: space-between;
                 transition: height 0.5s, width 0.5s;
@@ -498,7 +97,7 @@
                 position: relative;
                 width: 60px;
                 height: 60px;
-                background: #000;
+                background: rgba(0, 0, 0, 0);
                 display: flex;
                 align-items: center;
                 overflow: hidden;
@@ -522,9 +121,9 @@
                 min-width: 60px;
                 height: 60px;
                 overflow: hidden;
-                background: #000;
+                background: rgba(0, 0, 0, 0);
                 border-radius: 50%;
-                border: 10px solid #000;
+                border: 10px solid rgba(0, 0, 0, 0);
             }
 
             .navigation .userBx .imgBx img {
@@ -534,7 +133,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                
+
             }
 
             /* Hamburguer toggle menu */
@@ -543,7 +142,7 @@
                 position: relative;
                 width: 60px;
                 height: 60px;
-                background: #000;
+                background: rgba(0, 0, 0, 0);
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
@@ -557,7 +156,7 @@
                 height: 2px;
                 background: white;
                 transform: translateY(-10px);
-                box-shadow: 0 10px white;
+                box-shadow: 0 10px rgb(255, 255, 255);
                 transition: 0.5s;
             }
 
@@ -566,7 +165,7 @@
                 position: absolute;
                 width: 32px;
                 height: 2px;
-                background: white;
+                background: rgb(255, 255, 255);
                 transform: translateY(10px);
                 transition: 0.5s;
                 border-radius: 5px;
@@ -574,7 +173,7 @@
 
             .navigation.active .menuToggle::before {
                 transform: translateY(0px) rotate(45deg);
-                box-shadow: 0 0 white;
+                box-shadow: 0 0 rgb(165, 177, 207);
                 border-radius: 5px;
             }
 
@@ -589,8 +188,9 @@
                 height: calc(100% - 60px);
                 margin-top: 60px;
                 padding: 20px;
-                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-top: 1px solid rgba(154, 156, 234, 0.1);
                 border-radius: 5px;
+                font-size: large;
             }
 
             .menu li {
@@ -601,11 +201,14 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
-                margin: 20px 0;
                 font-size: 1em;
                 text-decoration: none;
                 color: white;
+                padding: 20px;
+                background-color: #a8b3bc;
+
             }
+
 
             .menu li a:hover {
                 font-size: larger;
@@ -615,21 +218,147 @@
             .menu li a ion-icon {
                 font-size: 1.5em;
             }
+
+            .slidebuttons {
+                width: 33.3333%;
+                height: 50px;
+                font-family: Poppins-Medium;
+                font-stretch: 100%;
+                font-weight: 400;
+                text-transform: uppercase;
+                color: white;
+                margin: 0px;
+                border: none;
+            }
+
+            .hideborder {
+                border-top: 0px;
+                border-bottom: 0px;
+                border-left: 1px;
+                border-right: 1px;
+                border-style: solid;
+            }
+
+            .borderradiusleft {
+                border-radius: 30px 0px 0px 30px;
+                background-color: rgb(0, 208, 255);
+            }
+
+            .borderradiusright {
+                border-radius: 0px 30px 30px 0px;
+                background-color: rgb(0, 208, 255);
+            }
+
+            .btn1:hover,
+            .bnt2:hover,
+            .btn3:hover {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            .btn3:hover {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            input[type="file"] {
+                padding: 4px;
+                margin: -4px;
+                position: relative;
+                outline: none;
+
+                /* File Selector Button Styles */
+                &::file-selector-button {
+                    border-radius: 4px;
+                    padding: 0 16px;
+                    height: 40px;
+                    cursor: pointer;
+                    background-color: white;
+                    border: 1px solid rgba(#000, 0.16);
+                    box-shadow: 0px 1px 0px rgba(#000, 0.05);
+                    margin-right: 16px;
+                    width: 132px;
+                    color: transparent;
+
+                    @supports (-moz-appearance: none) {
+                        color: var(--primary-color);
+                    }
+
+                    &:hover {
+                        background-color: #f3f4f6;
+                    }
+
+                    &:active {
+                        background-color: #e5e7eb;
+                    }
+                }
+
+                /* Faked label styles and icon */
+                &::before {
+                    position: absolute;
+                    pointer-events: none;
+                    top: 14px;
+                    left: 16px;
+                    height: 20px;
+                    width: 20px;
+                    content: "";
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+                }
+
+                &::after {
+                    position: absolute;
+                    pointer-events: none;
+                    top: 16px;
+                    left: 40px;
+                    color: var(--primary-color);
+                    content: "Upload File";
+                }
+
+                /* Handle Component Focus */
+                &:focus-within::file-selector-button,
+                &:focus::file-selector-button {
+                    outline: 2px solid var(--primary-color);
+                    outline-offset: 2px;
+                }
+            }
         </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
             integrity="sha512-XrlRqfzd7cwbTpoK3mL92Gvpr5Y6UQyKcJvX0+AexBu6BiCZPlYIWt+EifVHJyAdHb+/ZymD0w9es2NTkYq5rA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-     <div class="navigation">
+
+    <div class="navigation">
         <div class="userBx">
             <div class="imgBx">
                 <img src="https://i.pinimg.com/736x/07/66/d1/0766d183119ff92920403eb7ae566a85.jpg" alt="user avatar" />
             </div>
             <p class="username">GURU</p>
         </div>
-        <div class="menuToggle" ></div>
+        <div class="menuToggle"></div>
         <ul class="menu" style="cursor: pointer;">
 
         </ul>
@@ -645,170 +374,168 @@
         };
     </script>
 
-    <div class="container" id="container" style="display: none;margin-top: 100px;">
-        <div class="form-container sign-up-container">
-            <form action="#" class="signform">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" style="margin-top: 100px;">
+                <div class="hub-container" style="display: block;margin-top: 120px;">
+                    <span class="login100-form-title p-b-49" style="margin-top: -120px;padding-top: 0px;">
+                        VISIONARY AUDIO HUB
+                    </span>
+                    <div class="container-login100-form-btn" style="margin-bottom: 30px;">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="slidebuttons borderradiusleft btn1"
+                                onclick="ChangeInputType('text')">TEXT</button><button
+                                class="slidebuttons hideborder btn2"
+                                onclick="ChangeInputType('image')">IMAGE</button><button
+                                class="slidebuttons borderradiusright btn3"
+                                onclick="ChangeInputType('pdf')">PDF</button>
+                        </div>
+                    </div>
+                    <form id="content" action="https://192.168.199.238:5000/process" method="POST"
+                        enctype="multipart/form-data" class="login100-form validate-form">
+
+                        <div class="input-area">
+                            <input type="file" name="image" accept=".png, .jpg, .jpeg"
+                                style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;"
+                                id="inputimage">
+                        </div>
+
+
+                        <!-- Input field for PDF -->
+
+
+
+                        <!-- Textarea for user-provided text -->
+
+
+                        <h5 style="padding-right: 70%;padding-bottom: 20px;padding-top: 10px;">Language:</h5>
+                        <!-- Language Selection Radio Buttons -->
+                        <input class="language-radio" type="radio" id="tamil" name="language" value="ta">
+                        <label class="language-label" for="tamil">Tamil</label>
+
+                        <input class="language-radio" type="radio" id="english" name="language" value="en" checked>
+                        <label class="language-label" for="english">English</label>
+
+                        <input class="language-radio" type="radio" id="hindi" name="language" value="hi">
+                        <label class="language-label" for="hindi">Hindi</label>
+
+                        <br>
+                        <br>
+
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button class="login100-form-btn" type="submit" value="Convert">
+                                    Convert
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <input type="submit" value="Convert"> -->
+                    </form>
+
+
+                    <div class="drag-drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+                        ondragleave="handleDragLeave(event)">
+                        <p>Drag and drop files here to upload</p>
+                    </div>
                 </div>
-                <span>or use your email for registration</span>
-                <input class="signinput" type="text" placeholder="Name" />
-                <input class="signinput" type="email" placeholder="Email" />
-                <input class="signinput" type="password" placeholder="Password" />
-                <input class="signinput" type="file" name="image" accept=".png, .jpg, .jpeg"
-                    style="height: 35px;padding: 5px">
-                <button style="margin-top: 20px;">Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#" class="signform">
-                <h1>Sign in</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your account</span>
-                <input class="signinput" type="email" placeholder="Email" />
-                <input class="signinput" type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                <script>
+                    function ChangeInputType(type) {
+                        if (type == "text") {
+                            document.querySelector('.input-area').innerHTML = `<textarea class="text-box" name="user_text" rows="5" cols="50"
+            placeholder="Enter text..."></textarea>`
+                            ApplyBackgroundColorTransition('.btn1', 'rgba(0, 0, 0, 0)');
+                            ApplyBackgroundColorTransition('.btn2', 'rgb(0, 208, 255)');
+                            ApplyBackgroundColorTransition('.btn3', 'rgb(0, 208, 255)');
+                        } else if (type == "pdf") {
+                            document.querySelector('.input-area').innerHTML = `<input type="file" name="pdf" accept=".pdf"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;" id="inputpdf">`
+                            ApplyBackgroundColorTransition('.btn3', 'rgba(0, 0, 0, 0)');
+                            ApplyBackgroundColorTransition('.btn2', 'rgb(0, 208, 255)');
+                            ApplyBackgroundColorTransition('.btn1', 'rgb(0, 208, 255)');
+                        } else {
+                            document.querySelector('.input-area').innerHTML = `<input type="file" name="image" accept=".png, .jpg, .jpeg"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;" id="inputimage">`
+                            ApplyBackgroundColorTransition('.btn2', 'rgba(0, 0, 0, 0)');
+                            ApplyBackgroundColorTransition('.btn1', 'rgb(0, 208, 255)');
+                            ApplyBackgroundColorTransition('.btn3', 'rgb(0, 208, 255)');
+                        }
+                    }
 
-    <script>
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
+                    function ApplyBackgroundColorTransition(selector, color) {
+                        const element = document.querySelector(selector);
+                        element.style.transition = 'background-color 0.5s ease';
+                        setTimeout(() => {
+                            element.style.backgroundColor = color;
+                        }, 100);
+                    }
 
-        signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
-        });
+                </script>
+                <script>
+                    function HideAll() {
+                        document.querySelector(".hub-container").style.display = 'none'
+                        document.querySelector(".container").style.display = 'none';
+                    }
+                    function DisplayHome() {
+                        HideAll()
+                        document.querySelector(".hub-container").style.display = 'block'
+                    }
+                    function Displayloginforms() {
+                        HideAll()
+                        document.querySelector(".container").style.display = 'block';
+                    }
+                    function Logout() {
+                        localStorage.removeItem("userData")
+                        //showToast("LogOut Successfull", "Success", 3)
+                        CheckAlreadyLogin()
+                        return
+                    }
+                    setInLocal("GURU", "guruakashsm@gmail.com")
+                    function setInLocal(name, email) {
+                        const userData = {
+                            username: name,
+                            email,
+                        };
+                        localStorage.setItem("userData", JSON.stringify(userData));
+                    }
 
-        signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
-        });
-    </script>
-
-    <div class="hub-container" style="display: block;margin-top: 120px;">
-        <form id="content" action="https://192.168.128.238:5000/process" method="POST" enctype="multipart/form-data"
-            onsubmit="return validateForm()">
-            <h1>VISIONARY AUDIO HUB</h1>
-            <input type="file" name="image" accept=".png, .jpg, .jpeg"
-                style="width: 80%;margin-top: 40px;margin-bottom: 10px;height: 65px;padding: 20px;" id="inputimage">
-            <br>
-            <br>
-            <!-- Input field for user-provided text -->
-            <textarea class="text-box" name="user_text" rows="6" cols="50" placeholder="Enter text..."></textarea>
-            <br>
-
-            <h3 style="padding-right: 70%;">Language:</h3>
-            <!-- Language Selection Radio Buttons -->
-            <input class="language-radio" type="radio" id="tamil" name="language" value="ta">
-            <label class="language-label" for="tamil">Tamil</label>
-
-            <input class="language-radio" type="radio" id="english" name="language" value="en" checked>
-            <label class="language-label" for="english">English</label>
-
-            <input class="language-radio" type="radio" id="hindi" name="language" value="hi">
-            <label class="language-label" for="hindi">Hindi</label>
-
-            <br>
-            <br>
-            <input type="submit" onsubmit="SubmitIntiated()" value="Convert">
-        </form>
-
-        <div class="drag-drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
-            ondragleave="handleDragLeave(event)">
-            <p>Drag and drop files here to upload</p>
-        </div>
-    </div>
-    <script>
-        function HideAll() {
-            document.querySelector(".hub-container").style.display = 'none'
-            document.querySelector(".container").style.display = 'none';
-        }
-        function DisplayHome() {
-            HideAll()
-            document.querySelector(".hub-container").style.display = 'block'
-        }
-        function Displayloginforms() {
-            HideAll()
-            document.querySelector(".container").style.display = 'block';
-        }
-        function Logout() {
-            localStorage.removeItem("userData")
-            //showToast("LogOut Successfull", "Success", 3)
-            CheckAlreadyLogin()
-            return
-        }
-        setInLocal("GURU", "guruakashsm@gmail.com")
-        function setInLocal(name, email) {
-            const userData = {
-                username: name,
-                email,
-            };
-            localStorage.setItem("userData", JSON.stringify(userData));
-        }
-
-        CheckAlreadyLogin()
-        function CheckAlreadyLogin() {
-            const storedData = localStorage.getItem("userData");
-            let html = ""
-            if (storedData) {
-                const userData = JSON.parse(storedData);
-                html = `       
-                    <li>
+                    CheckAlreadyLogin()
+                    function CheckAlreadyLogin() {
+                        const storedData = localStorage.getItem("userData");
+                        let html = ""
+                        if (storedData) {
+                            const userData = JSON.parse(storedData);
+                            html = `       
+                    <li style="color:white;">
                         <a href="#"><ion-icon name="person-outline"></ion-icon>Profile</a>
                     </li>
-                    <li>
+                    <li style="color:white;">
                         <a onclick="DisplayHome()"><ion-icon name="home-outline"></ion-icon>Home</a>
                     </li>
-                    <li>
+                    <li style="color:white;">
                         <a href="#"
                         ><ion-icon name="chatbubble-outline"></ion-icon>History</a>
                     </li>
-                    <li>
-                        <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
-                    </li>
-                    <li>
-                        <a onclick="Logout()"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+
+                    <li onclick="Logout()" style="color:white;">
+                        <a ><ion-icon name="log-out-outline"></ion-icon>Logout</a>
                     </li>`
-            } else {
-                html = `         
+                        } else {
+                            html = `         
                      <li>
                         <a onclick="Displayloginforms()"><ion-icon name="person-outline"></ion-icon>Sign In/Up</a>
                     </li>
                     <li>
                         <a onclick="DisplayHome()"><ion-icon name="home-outline"></ion-icon>Home</a>
                     </li> `
-                document.querySelector(".menu").style.maxHeight = "100px";
-                document.querySelector(".menu").style.height = "100px";
+                            document.querySelector(".menu").style.maxHeight = "100px";
+                            document.querySelector(".menu").style.height = "100px";
 
-            }
+                        }
 
-            document.querySelector(".menu").innerHTML = html;
-        }
-
-
+                        document.querySelector(".menu").innerHTML = html;
+                    }
+                </script>
+                <!--
         const sellerForm = document.getElementById('content');
         sellerForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -827,7 +554,7 @@
                     email: document.getElementById('seller-email').value,
                     password: document.getElementById('seller-password').value,
                     confirmpassword: document.getElementById('seller-confirm-password').value,
-                    image: ("data:image/jpeg;base64,"+base64Image),
+                    image: ("data:image/jpeg;base64," + base64Image),
                 };
 
                 if (userData.name == "" || userData.email == "" || userData.password == "" || userData.confirmpassword == "") {
@@ -861,8 +588,8 @@
             reader.readAsArrayBuffer(imageFile);
         });
 
-    </script>
-    
+    </script> -->
+
 
 </body>
 
