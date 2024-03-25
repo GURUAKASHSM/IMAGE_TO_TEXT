@@ -1071,7 +1071,7 @@
                     return
                 }
                 // Send a POST request to your Go backend
-                fetch("http://192.168.0.103:8080/login", {
+                fetch("https://192.168.0.103:8080/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1157,7 +1157,7 @@
                         return;
                     }
                     // Send a POST request to your Go backend
-                    fetch("http://192.168.0.103:8080/register", {
+                    fetch("https://192.168.0.103:8080/register", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1202,7 +1202,7 @@
                     email: document.getElementById("registeremail").value,
                     verification: otp,
                 };
-                fetch("http://192.168.0.103:8080/verify", {
+                fetch("https://192.168.0.103:8080/verify", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1249,7 +1249,7 @@
                 const formData = {
                     email,
                 };
-                fetch("http://192.168.0.103:8080/forgetpassword", {
+                fetch("https://192.168.0.103:8080/forgetpassword", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1295,7 +1295,7 @@
                     return;
                 }
 
-                fetch("http://192.168.0.103:8080/passwordchange", {
+                fetch("https://192.168.0.103:8080/passwordchange", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
