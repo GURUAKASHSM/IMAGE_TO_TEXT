@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMAGE-SPEECH</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        };
+    </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE-SPEECH</title>
    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
@@ -1059,7 +1071,7 @@
                     return
                 }
                 // Send a POST request to your Go backend
-                fetch("http://localhost:8080/login", {
+                fetch("http://192.168.0.103:8080/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1145,7 +1157,7 @@
                         return;
                     }
                     // Send a POST request to your Go backend
-                    fetch("http://localhost:8080/register", {
+                    fetch("http://192.168.0.103:8080/register", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1190,7 +1202,7 @@
                     email: document.getElementById("registeremail").value,
                     verification: otp,
                 };
-                fetch("http://localhost:8080/verify", {
+                fetch("http://192.168.0.103:8080/verify", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1237,7 +1249,7 @@
                 const formData = {
                     email,
                 };
-                fetch("http://localhost:8080/forgetpassword", {
+                fetch("http://192.168.0.103:8080/forgetpassword", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1283,7 +1295,7 @@
                     return;
                 }
 
-                fetch("http://localhost:8080/passwordchange", {
+                fetch("http://192.168.0.103:8080/passwordchange", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
