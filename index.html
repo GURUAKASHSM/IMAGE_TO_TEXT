@@ -528,7 +528,7 @@
                                 onclick="ChangeInputType('pdf')">PDF</button>
                         </div>
                     </div>
-                    <form id="content" action="https://192.168.0.103:5000/process" method="POST"
+                    <form id="content" action="https://192.168.0.203:5000/process" method="POST"
                         enctype="multipart/form-data" class="login100-form validate-form">
 
                         <div class="input-area">
@@ -1071,7 +1071,7 @@
                     return
                 }
                 // Send a POST request to your Go backend
-                fetch("https://192.168.0.103:8080/login", {
+                fetch("http://localhost:8080/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1157,7 +1157,7 @@
                         return;
                     }
                     // Send a POST request to your Go backend
-                    fetch("https://192.168.0.103:8080/register", {
+                    fetch("http://localhost:8080/register", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1202,7 +1202,7 @@
                     email: document.getElementById("registeremail").value,
                     verification: otp,
                 };
-                fetch("https://192.168.0.103:8080/verify", {
+                fetch("http://localhost:8080/verify", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1249,7 +1249,7 @@
                 const formData = {
                     email,
                 };
-                fetch("https://192.168.0.103:8080/forgetpassword", {
+                fetch("http://localhost:8080/forgetpassword", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1295,7 +1295,7 @@
                     return;
                 }
 
-                fetch("https://192.168.0.103:8080/passwordchange", {
+                fetch("http://localhost:8080/passwordchange", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
