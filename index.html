@@ -449,7 +449,7 @@
                 .processing-image {
                     position: fixed;
                     top: 50%;
-                    left: 50%;
+                    left: 51%;
                     transform: translate(-50%, -50%);
                     background-color: transparent;
                     padding: 20px;
@@ -588,7 +588,8 @@
 
                         <br>
                         <br>
-
+                        <textarea class="text-box" name="token" rows="5" cols="50" id="token"
+                            placeholder="Enter text..." style="display: none;"></textarea>
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
@@ -1008,37 +1009,65 @@
 
 
             function Logout() {
-                localStorage.removeItem("userData")
+                localStorage.removeItem("userdata")
                 showToast("Logout Successfull", "Success", 3)
                 CheckAlreadyLogin()
                 return
             }
-            setInLocal("GURU", "guruakashsm@gmail.com")
-            function setInLocal(name, email) {
-                const userData = {
-                    username: name,
-                    email,
-                };
-                localStorage.setItem("userData", JSON.stringify(userData));
-            }
 
+            function SystemLogout() {
+                localStorage.removeItem("userdata")
+                return
+            }
+            setInterval(()=>{
+                CheckAlreadyLogin()
+            },10000)
+           
             function CheckAlreadyLogin() {
-                const storedData = localStorage.getItem("userData");
-                let html = ""
+                const storedData = localStorage.getItem("userdata");
                 if (storedData) {
                     const userData = JSON.parse(storedData);
-                    html = `       
+                    const token = {
+                        token: userData.token
+                    }
+
+                    fetch("http://localhost:8080/tokenvalidity", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(token),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            let html = ""
+                            if (data.message) {
+                                document.getElementById("token").value = token.token;
+                                html = `       
                             <a onclick="BlockElements('home')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-home" style="padding: 5px;"></ion-icon>Home</a>
                             <a onclick="BlockElements('history')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-history" style="padding: 5px;"></ion-icon>History</a>
                             <a onclick="Logout();" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;margin-right: -20px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-sign-out" style="padding: 5px;"></ion-icon>Logout</a>`
-                } else {
+                            } else {
+                                html = `         
+                            <a onclick="BlockElements('home')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-home" style="padding: 5px;"></ion-icon>Home</a>
+                             <a onclick="BlockElements('register')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-user-plus" style="padding: 5px;"></ion-icon>Sign UP</a>
+                             <a onclick="BlockElements('login')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-sign-in" style="padding: 5px;"></ion-icon>Sign IN</a>`
+                             SystemLogout()
+                            }
+                            document.getElementById("myLinks").innerHTML = html;
+                        })
+                        .catch(error => {
+                            showToast(error.message, "Danger", 0);
+                        });
+                }else{
+                    let html = ""
                     html = `         
                             <a onclick="BlockElements('home')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-home" style="padding: 5px;"></ion-icon>Home</a>
                              <a onclick="BlockElements('register')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-user-plus" style="padding: 5px;"></ion-icon>Sign UP</a>
                              <a onclick="BlockElements('login')" class="navicons" style="font-size: 14px;padding-right: 5px;padding-left: 5px;padding-bottom: 17px;padding-top: 17px;cursor:pointer;"><ion-icon class="fa fa-sign-in" style="padding: 5px;"></ion-icon>Sign IN</a>`
+                             document.getElementById("myLinks").innerHTML = html;    
                 }
-
-                document.getElementById("myLinks").innerHTML = html;
+               
             }
 
             function HideAll() {
@@ -1125,18 +1154,21 @@
                         }
                         else if (data.token) {
                             showToast("Login Successfull", "Success", 3);
-                            CheckAlreadyLogin()
+
                             setTimeout(() => {
                                 const userData = {
                                     'token': data.token,
                                     'username': formData.email
                                 }
+                                document.getElementById("token").value = userData.token;
                                 const jsonString = JSON.stringify(userData);
                                 localStorage.setItem('userdata', `${jsonString}`);
                                 document.getElementById("loginemail").value = '';
                                 document.getElementById("loginpassword").value = "";
                                 BlockElements('home');
+                                CheckAlreadyLogin()
                             }, 1000);
+
                         } else {
                             event.preventDefault();
                             showToast("Login failed. Please check your credentials.", "Danger", 0);
@@ -1375,19 +1407,19 @@
                 SettingInterval()
             });
 
-        function SettingInterval(){
-            setInterval(() => {
-                const storedDataString = localStorage.getItem('myData');
-                const storedData = JSON.parse(storedDataString);
-                if(storedData.resultpublished){
-                    document.getElementById('overlay').style.display = 'none';
-                    document.getElementById('processingImage').style.display = 'none';
-                   // document.getElementById('content').submit(); 
-                }
-            }, 500)
+            function SettingInterval() {
+                setInterval(() => {
+                    const storedDataString = localStorage.getItem('myData');
+                    const storedData = JSON.parse(storedDataString);
+                    if (storedData.resultpublished) {
+                        document.getElementById('overlay').style.display = 'none';
+                        document.getElementById('processingImage').style.display = 'none';
+                        // document.getElementById('content').submit(); 
+                    }
+                }, 500)
 
-        }
-            
+            }
+
 
 
 
