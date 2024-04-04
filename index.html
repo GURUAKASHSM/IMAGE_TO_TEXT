@@ -583,7 +583,7 @@
                 <img class="profile-image"
                     src="https://w1.pngwing.com/pngs/386/684/png-transparent-face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette-thumbnail.png"
                     alt="profile">
-                <span>Guru</span>
+                <span></span>
             </a>
             <div id="myLinks">
                 <!--Items wil dynamically added here-->
@@ -937,7 +937,7 @@
 
                             <div class="text-box" style="width: 95%;margin-left: 10px;">
                                 <span class="copy-icon" onclick="copyText('text_tesseract')"><i class="fa fa-clone"
-                                        style="color: black;margin-left: 250px;font-size: 15px"></i></span>
+                                        style="color: black;margin-left: 250px;font-size: 15px;cursor:pointer;"></i></span>
                                 <p style="font-size: 18px;color: #000;" id="text_tesseract">{{ text_tesseract }}</p>
 
                             </div>
@@ -971,7 +971,7 @@
 
                             <div class="text-box" style="width: 95%;margin-left: 10px;">
                                 <span class="copy-icon" onclick="copyText('text_gemini')"><i class="fa fa-clone"
-                                        style="color: black;margin-left: 250px;font-size: 15px;"></i></span>
+                                        style="color: black;margin-left: 250px;font-size: 15px;cursor:pointer;"></i></span>
                                 <p style="font-size: 18px;color: black;" id="text_gemini">{{ text_gemini }}</p>
                             </div>
 
@@ -1170,7 +1170,7 @@
                             console.log(data)
                             let html = ""
                             if (data.message) {
-                                let count  = data.message.textcount + data.message.imagecount + data.message.pdfcount + data.message.ocrcount + data.message.aicount
+                                let count = data.message.textcount + data.message.imagecount + data.message.pdfcount + data.message.ocrcount + data.message.aicount
                                 html = `
                                         <div class="hub-container" style="display: block;margin-top: 0px;">
                                 <span class="login100-form-title p-b-49"
@@ -1227,6 +1227,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="text mt-3" style="text-align:center;font-size:3px"> 
+                                    <span style="text-align: center;>
+                                         <p style="font-size:3px;text-align:center">
+                                             &copy;
+                                            <span id="year"></span>
+                                            TechnoWild. All rights reserved.
+                                         </p>
+                                    </span>
+                                </div>
                             </div>`
                             }
                             document.getElementById("profile").innerHTML = html;
@@ -1236,11 +1245,13 @@
                             showToast(error.message, "Danger", 0);
                         });
                 } else {
-                    showToast("Login to Visit Profile", "Info", 2)
+                    showToast("Login to Visit Profile", "Info", 4)
 
                 }
 
             }
+
+            document.getElementById("year").innerHTML = new Date().getFullYear();
 
             function HideAll() {
                 document.getElementById("home").style.display = 'none';
@@ -1468,6 +1479,17 @@
                     showToast("Login to View History", "Info", 1)
                     return
                 }
+            }
+
+            function copyText(elementId) {
+                var text = document.getElementById(elementId).innerText;
+                var tempInput = document.createElement("input");
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                showToast("Text Copyied to Clip Board", "Success", 3)
             }
 
 
