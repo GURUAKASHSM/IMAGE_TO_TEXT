@@ -1289,6 +1289,7 @@
                             </div>`
                             }
                             document.getElementById("profile").innerHTML = html;
+                            document.getElementById("year").innerHTML = new Date().getFullYear();
                             BlockElements('profile')
                         })
                         .catch(error => {
@@ -1301,8 +1302,7 @@
 
             }
 
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-
+            
             function HideAll() {
                 document.getElementById("home").style.display = 'none';
                 document.getElementById("login").style.display = 'none';
