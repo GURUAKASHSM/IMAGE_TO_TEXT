@@ -640,7 +640,7 @@
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
-                                <button class="login100-form-btn" type="submit" value="Convert" id="convertButton">
+                                <button class="login100-form-btn" type="submit" value="Convert" id="convertButton" onclick="DisplayProcessing()">
                                     Convert
                                 </button>
                             </div>
@@ -965,7 +965,7 @@
             </div>
 
 
-            <div class="limiter" style="display: none;" id="viewhistory">
+            <div class="limiter" style="display: none;margin-left:20px" id="viewhistory">
                 <div class="container-login100"
                     style="background-image: url('https://gardanasional.com/images/background/bg-01.jpg');display: flex;flex-direction: column;">
 
@@ -1864,28 +1864,20 @@
             }
 
 
-            document.getElementById('convertButton').addEventListener('click', function () {
+             function DisplayProcessing() {
                 // Show overlay and processing image
+                console.log("Displaying image")
                 document.getElementById('overlay').style.display = 'block';
                 document.getElementById('processingImage').style.display = 'block';
-                const data = {
-                    resultpublished: false
-                };
-                const dataString = JSON.stringify(data);
-                localStorage.setItem('myData', dataString);
                 SettingInterval()
-            });
+            }
 
             function SettingInterval() {
                 setInterval(() => {
-                    const storedDataString = localStorage.getItem('myData');
-                    const storedData = JSON.parse(storedDataString);
-                    if (storedData.resultpublished) {
                         document.getElementById('overlay').style.display = 'none';
                         document.getElementById('processingImage').style.display = 'none';
                         // document.getElementById('content').submit(); 
-                    }
-                }, 500)
+                }, 10000)
 
             }
 
