@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+        content="300611678179-v6pibejs7bbr6bl9ltsijss0aqo9804d.apps.googleusercontent.com">
     <title>IMAGE-SPEECH</title>
     <script>
         if ('serviceWorker' in navigator) {
@@ -577,6 +579,7 @@
         }
     </script>
 
+
     <div class="limiter">
         <div class="topnav">
             <a onclick="DisplayProfile()" class="active" style="cursor: pointer;">
@@ -697,11 +700,17 @@
 
                     <div class="txt1 text-center p-t-54 p-b-20" style="padding-top: 20px;">
                     </div>
-
+                    <div id="g_id_onload"
+                        data-client_id="300611678179-v6pibejs7bbr6bl9ltsijss0aqo9804d.apps.googleusercontent.com"
+                        data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                        data-auto_prompt="false">
+                    </div>
                     <div class="flex-c-m">
-                        <a href="#" class="login100-social-item bg3">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
+
+                        <div id="sign" style="display: block;width: 45px;" class="g_id_signin" data-type="standard"
+                            data-shape="rectangular" data-theme="outline" data-size="large" data-logo_alignment="left">
+                        </div>
+
                     </div>
 
                     <div class="flex-col-c p-t-155" style="margin-top: 0px;padding-top: 50px;">
@@ -917,7 +926,7 @@
 
                     <div class="wrap-input100 validate-input m-b-23" data-validate="OTP is reauired">
                         <span class="label-input100">FeedBack</span>
-                        <input class="input100" type="text" name="username" placeholder="Type your Feedback"
+                        <input class="input100" type="text" name="feedback" placeholder="Type your Feedback"
                             id="feedbackinput">
                         <span class="focus-input100" data-symbol="&#xf206;"></span>
                     </div>
@@ -1279,7 +1288,7 @@
                             showToast(error.message, "Danger", 0);
                         });
                 } else {
-                    showToast("Login to Visit Profile", "Info", 4)
+                    showToast("Login to Visit Profile", "Info", 1)
 
                 }
 
@@ -1872,10 +1881,98 @@
 
             }
 
+            function SubmitFeedBack(event) {
+                event.preventDefault();
+                const storedData = localStorage.getItem("userdata");
+                if (storedData) {
+                    const userData = JSON.parse(storedData);
+
+                    const formData = {
+                        token: userData.token,
+                        feedback: (document.getElementById("feedbackinput").value).trim(),
+                    };
+                    if (formData.feedback == "") {
+                        showToast("Please Enter feedback", "Info", 4)
+                        return
+                    }
 
 
+                    fetch("http://localhost:8080/insertfeedback", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(formData),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.message) {
+                                showToast(data.message, "Success", 3)
+                                document.getElementById("feedbackinput").value = "";
+                            } else if (data.error) {
+                                showToast(`${data.error}`, "Danger", 0);
+                            }
+                        })
+                        .catch(error => {
+
+                            showToast(`Error: ${error.message}`, "Danger", 0);
+                        });
+                    return false;
+                } else {
+                    showToast(`Login to give feedback`, "Danger", 0);
+                }
+            }
+
+
+    
+
+
+
+        // Sign in // Sign in // Sign in // Sign in
+        function handleCredentialResponse(response) {
+
+
+            const responsePayload = decodeJwtResponse(response.credential);
+
+            let infos = {
+                fullnameL: responsePayload.name,
+                photo_linkL: responsePayload.picture,
+                firstL: responsePayload.given_name,
+                lastL: responsePayload.family_name,
+                mailL: responsePayload.email,
+                id_numL: responsePayload.sub
+            }
+
+            let infosL = JSON.stringify(infos)
+
+            localStorage.setItem("infos", infosL)
+            console.log(infosL)
+
+            
+        }
+
+
+        // decodeJwtResponse()
+        function decodeJwtResponse(data) {
+            let tokens = data.split(".");
+            return JSON.parse(atob(tokens[1]))
+        }
+
+        // Sign Out
+        out.addEventListener("click", () => {
+            localStorage.clear()
+            info.classList.add("d-none")
+            sign.classList.remove("d-none")
+            out.classList.add("d-none")
+        })
 
         </script>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
 
 </body>
 
