@@ -1161,7 +1161,7 @@
                         token: userData.token
                     }
 
-                    fetch("https://technowild.up.railway.app/tokenvalidity", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/tokenvalidity", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1208,7 +1208,7 @@
                         token: userData.token
                     }
 
-                    fetch("https://technowild.up.railway.app/getuserbyid", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/getuserbyid", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1331,7 +1331,7 @@
                         token: userData.token
                     }
 
-                    fetch("https://technowild.up.railway.app/listhistory", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/listhistory", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1459,7 +1459,7 @@
                         historyid: id
                     }
 
-                    fetch("https://technowild.up.railway.app/viewhistory", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/viewhistory", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1541,7 +1541,7 @@
                         historyid: id
                     }
 
-                    fetch("https://technowild.up.railway.app/deletehistory", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/deletehistory", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1608,7 +1608,7 @@
                     return
                 }
                 // Send a POST request to your Go backend
-                fetch("https://technowild.up.railway.app/login", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1698,7 +1698,7 @@
                         return;
                     }
                     // Send a POST request to your Go backend
-                    fetch("https://technowild.up.railway.app/register", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/register", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1743,7 +1743,7 @@
                     email: document.getElementById("registeremail").value,
                     verification: otp,
                 };
-                fetch("https://technowild.up.railway.app/verify", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/verify", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1790,7 +1790,7 @@
                 const formData = {
                     email,
                 };
-                fetch("https://technowild.up.railway.app/forgetpassword", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/forgetpassword", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1836,7 +1836,7 @@
                     return;
                 }
 
-                fetch("https://technowild.up.railway.app/passwordchange", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/passwordchange", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1905,7 +1905,7 @@
                     }
 
 
-                    fetch("https://technowild.up.railway.app/insertfeedback", {
+                    fetch("https://visionary-audio-hub-backend.onrender.com/insertfeedback", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -1934,7 +1934,7 @@
             function SignInWithGoogle(details) {
 
                 // Send a POST request to your Go backend
-                fetch("https://technowild.up.railway.app/login", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -1975,7 +1975,7 @@
 
             function SignUpWithGoogle(details) {
 
-                fetch("https://technowild.up.railway.app/signupwithgoogle", {
+                fetch("https://visionary-audio-hub-backend.onrender.com/signupwithgoogle", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
