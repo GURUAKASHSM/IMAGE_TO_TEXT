@@ -839,7 +839,7 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn" type="submit">
+                            <button class="login100-form-btn" type="click" onclick="forgotpassword(event)">
                                 Submit
                             </button>
                         </div>
@@ -889,7 +889,7 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn" type="submit">
+                            <button class="login100-form-btn" type="click" onclick="ChangePassword(event)">
                                 Submit
                             </button>
                         </div>
@@ -1736,7 +1736,7 @@
                 return false;
             }
 
-            document.querySelector(".forgotpassword").addEventListener("submit", (event) => {
+            function forgotpassword(event){
                 event.preventDefault();
                 let email = (document.getElementById("forgotpasswordemail").value).trim()
                 if (email === "") {
@@ -1773,10 +1773,10 @@
                         showToast(`Error: ${error.message}`, "Danger", 0);
                     });
                 return false;
-            })
+            }
 
 
-            document.querySelector(".changepassword").addEventListener("submit", (event) => {
+            function ChangePassword(event){
                 event.preventDefault();
                 const formData = {
                     email: (document.getElementById("forgotpasswordemail").value).trim(),
@@ -1822,7 +1822,7 @@
                         showToast(`Error: ${error.message}`, "Danger", 0);
                     });
                 return false;
-            })
+            }
 
 
             document.getElementById('convertButton').addEventListener('click', function () {
