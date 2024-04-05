@@ -785,10 +785,17 @@
                     <div class="txt1 text-center p-t-54 p-b-20" style="padding-top: 20px;">
                     </div>
 
+                    <div id="g_id_onload"
+                        data-client_id="960981261075-cm0tni0lhpcbbjfc1e9l1c9d9ak4fld0.apps.googleusercontent.com"
+                        data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse"
+                        data-auto_prompt="false">
+                    </div>
                     <div class="flex-c-m">
-                        <a href="#" class="login100-social-item bg3">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
+
+                        <div id="sign" style="display: block;width: 45px;" class="g_id_signin" data-type="standard"
+                            data-shape="rectangular" data-theme="outline" data-size="large" data-logo_alignment="left">
+                        </div>
+
                     </div>
 
                     <div class="flex-col-c p-t-155" style="margin-top: 0px;padding-top: 50px;">
@@ -1313,6 +1320,7 @@
             function BlockElements(id) {
                 HideAll()
                 document.getElementById(id).style.display = 'block';
+                var recentPage = id
             }
 
             function DisplayHistory() {
@@ -1923,48 +1931,110 @@
                 }
             }
 
+            function SignInWithGoogle(details) {
 
-    
+                // Send a POST request to your Go backend
+                fetch("http://localhost:8080/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(details),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message) {
+                            showToast(data.message, "Warning", 2);
+                        }
+                        else if (data.token) {
+                            showToast("Login Successfull", "Success", 3);
 
+                            setTimeout(() => {
+                                const userData = {
+                                    'token': data.token,
+                                    'username': formData.email
+                                }
+                                document.getElementById("token").value = userData.token;
+                                const jsonString = JSON.stringify(userData);
+                                localStorage.setItem('userdata', `${jsonString}`);
+                                document.getElementById("loginemail").value = '';
+                                document.getElementById("loginpassword").value = "";
+                                BlockElements('home');
+                                CheckAlreadyLogin()
+                            }, 1000);
 
-
-        // Sign in // Sign in // Sign in // Sign in
-        function handleCredentialResponse(response) {
-
-
-            const responsePayload = decodeJwtResponse(response.credential);
-
-            let infos = {
-                fullnameL: responsePayload.name,
-                photo_linkL: responsePayload.picture,
-                firstL: responsePayload.given_name,
-                lastL: responsePayload.family_name,
-                mailL: responsePayload.email,
-                id_numL: responsePayload.sub
+                        } else {
+                            event.preventDefault();
+                            showToast("Login failed. Please check your credentials.", "Danger", 0);
+                        }
+                    })
+                    .catch(error => {
+                        showToast(error.message, "Danger", 0);
+                    });
             }
 
-            let infosL = JSON.stringify(infos)
+            function SignUpWithGoogle(details) {
 
-            localStorage.setItem("infos", infosL)
-            console.log(infosL)
+                fetch("http://localhost:8080/signupwithgoogle", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(details),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message) {
+                            showToast(data.message, "Success", 3)
+                            if (data.message == 'Account Created Successfully') {
+                                BlockElements('login')
+                            }
+                        } else if (data.error) {
+                            showToast(`${data.error}`, "Danger", 0);
+                        }
+                    })
+                    .catch(error => {
 
-            
-        }
+                        showToast(`Error: ${error.message}`, "Danger", 0);
+                    });
+            }
 
 
-        // decodeJwtResponse()
-        function decodeJwtResponse(data) {
-            let tokens = data.split(".");
-            return JSON.parse(atob(tokens[1]))
-        }
 
-        // Sign Out
-        out.addEventListener("click", () => {
-            localStorage.clear()
-            info.classList.add("d-none")
-            sign.classList.remove("d-none")
-            out.classList.add("d-none")
-        })
+            // Sign in // Sign in // Sign in // Sign in
+            function handleCredentialResponse(response) {
+                const responsePayload = decodeJwtResponse(response.credential);
+
+                let infos = {
+                    name: responsePayload.name + responsePayload.given_name + responsePayload.family_name,
+                    image: responsePayload.picture,
+                    email: responsePayload.email,
+                    password: responsePayload.sub,
+                }
+
+                let infosL = JSON.stringify(infos)
+                if (recentPage == 'login') {
+                    SignInWithGoogle(infos);
+                } else if (recentPage == 'register') {
+                    SignUpWithGoogle(infos);
+                }
+                console.log(infosL)
+            }
+
+
+            // decodeJwtResponse()
+            function decodeJwtResponse(data) {
+                let tokens = data.split(".");
+                return JSON.parse(atob(tokens[1]))
+            }
+
+            // Sign Out
+            out.addEventListener("click", () => {
+                localStorage.clear()
+                info.classList.add("d-none")
+                sign.classList.remove("d-none")
+                out.classList.add("d-none")
+            })
 
         </script>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
