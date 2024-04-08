@@ -1071,7 +1071,7 @@
                 event.preventDefault();
                 var files = event.dataTransfer.files;
                 document.getElementById(inputfile).files = files;
-                showToast("File added Successfully","Info",1)
+                showToast("File added Successfully", "Info", 1)
             }
 
             function handleDragOver(event) {
@@ -1081,7 +1081,7 @@
             function handleDragLeave(event) {
                 event.preventDefault();
             }
-          
+
 
 
             function ChangeInputType(type) {
@@ -1175,7 +1175,7 @@
             }
             setInterval(() => {
                 CheckAlreadyLogin()
-            }, 10000)
+            }, 60000)
             CheckAlreadyLogin()
             function CheckAlreadyLogin() {
                 const storedData = localStorage.getItem("userdata");
