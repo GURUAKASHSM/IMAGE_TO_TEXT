@@ -640,7 +640,8 @@
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
-                                <button class="login100-form-btn" type="submit" value="Convert" id="convertButton" onclick="DisplayProcessing()">
+                                <button class="login100-form-btn" type="submit" value="Convert" id="convertButton"
+                                    onclick="DisplayProcessing()">
                                     Convert
                                 </button>
                             </div>
@@ -1065,6 +1066,24 @@
 
         <div id="dropDownSelect1"></div>
         <script>
+            let inputfile = "inputimage"
+            function handleDrop(event) {
+                event.preventDefault();
+                var files = event.dataTransfer.files;
+                document.getElementById(inputfile).files = files;
+                showToast("File added Successfully","Info",1)
+            }
+
+            function handleDragOver(event) {
+                event.preventDefault();
+            }
+
+            function handleDragLeave(event) {
+                event.preventDefault();
+            }
+          
+
+
             function ChangeInputType(type) {
                 if (type == "text") {
                     document.querySelector('.input-area').innerHTML = `<textarea class="text-box" name="user_text" rows="5" cols="50"
@@ -1072,16 +1091,21 @@
                     ApplyBackgroundColorTransition('.button1', 'rgba(0, 0, 0, 0)');
                     ApplyBackgroundColorTransition('.button2', 'rgb(0, 208, 255)');
                     ApplyBackgroundColorTransition('.button3', 'rgb(0, 208, 255)');
+                    document.querySelector('.drag-drop-area').style.display = 'none';
                 } else if (type == "pdf") {
                     document.querySelector('.input-area').innerHTML = `<input type="file" name="pdf" accept=".pdf"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;width: 95%;height: 50px;font-size: 14px;" id="inputpdf">`
                     ApplyBackgroundColorTransition('.button3', 'rgba(0, 0, 0, 0)');
                     ApplyBackgroundColorTransition('.button2', 'rgb(0, 208, 255)');
                     ApplyBackgroundColorTransition('.button1', 'rgb(0, 208, 255)');
+                    document.querySelector('.drag-drop-area').style.display = 'block';
+                    inputfile = "inputpdf"
                 } else {
                     document.querySelector('.input-area').innerHTML = `<input type="file" name="image" accept=".png, .jpg, .jpeg"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;width: 95%;height: 50px;font-size: 14px;" id="inputimage">`
                     ApplyBackgroundColorTransition('.button2', 'rgba(0, 0, 0, 0)');
                     ApplyBackgroundColorTransition('.button1', 'rgb(0, 208, 255)');
                     ApplyBackgroundColorTransition('.button3', 'rgb(0, 208, 255)');
+                    document.querySelector('.drag-drop-area').style.display = 'block';
+                    inputfile = "inputimage"
                 }
             }
 
@@ -1302,7 +1326,7 @@
 
             }
 
-            
+
             function HideAll() {
                 document.getElementById("home").style.display = 'none';
                 document.getElementById("login").style.display = 'none';
@@ -1864,7 +1888,7 @@
             }
 
 
-             function DisplayProcessing() {
+            function DisplayProcessing() {
                 // Show overlay and processing image
                 console.log("Displaying image")
                 document.getElementById('overlay').style.display = 'block';
@@ -1874,9 +1898,9 @@
 
             function SettingInterval() {
                 setInterval(() => {
-                        document.getElementById('overlay').style.display = 'none';
-                        document.getElementById('processingImage').style.display = 'none';
-                        // document.getElementById('content').submit(); 
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('processingImage').style.display = 'none';
+                    // document.getElementById('content').submit(); 
                 }, 20000)
 
             }
@@ -1998,7 +2022,7 @@
                 const responsePayload = decodeJwtResponse(response.credential);
 
                 let infos = {
-                    name: responsePayload.name,
+                    name: responsePayload.name + responsePayload.given_name + responsePayload.family_name,
                     image: responsePayload.picture,
                     email: responsePayload.email,
                     password: responsePayload.sub,
