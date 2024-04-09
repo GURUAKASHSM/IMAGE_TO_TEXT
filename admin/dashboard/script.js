@@ -271,16 +271,16 @@ function showToast(str, war, no) {
     toastContainer.style.height = 'auto';
 
     if (no == 0) {
-        image.src = 'admin/dashboard/images/danger.webp';
+        image.src = 'dashboard/images/danger.webp';
         toastContainer.classList.add('danger-color');
     } else if (no == 1) {
-        image.src = 'admin/dashboard/images/info.svg';
+        image.src = 'dashboard/images/info.svg';
         toastContainer.classList.add('info-color');
     } else if (no == 2) {
-        image.src = 'admin/dashboard/images/warning.jpg';
+        image.src = 'dashboard/images/warning.jpg';
         toastContainer.classList.add('warning-color');
     } else if (no == 3) {
-        image.src = 'admin/dashboard/images/success.png';
+        image.src = 'dashboard/images/success.png';
         toastContainer.classList.add('success-color');
     }
     title.innerHTML = `${war}`;
