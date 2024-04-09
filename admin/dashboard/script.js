@@ -15,7 +15,7 @@ const formData = {
 
 function DisplayData() {
     console.log(formData)
-    fetch("http://localhost:8080/getdetailsforadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/getdetailsforadmin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function LogOut() {
 
 function DisplayCustomerData() {
     let count = 0
-    fetch("http://localhost:8080/getallcustomerforadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/getallcustomerforadmin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -127,7 +127,7 @@ function calculatePercentage(totalAmount, receivedAmount) {
 
 function DisplayFeedBack() {
     let count = 0;
-    fetch("http://localhost:8080/listfeedback", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/listfeedback", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -170,7 +170,7 @@ function DisplayFeedBack() {
 DisplayFeedBack()
 
 function deleteFeedback(email, feedback) {
-    fetch("http://localhost:8080/deletefeedback", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/deletefeedback", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -192,7 +192,7 @@ function deleteFeedback(email, feedback) {
 }
 
 function DisplayHistory() {
-    fetch("http://localhost:8080/listhistoryforadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/listhistoryforadmin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -350,7 +350,7 @@ function DisplayListUsers() {
     document.getElementById('update-form-admin-container').style.display = 'none';
     document.getElementById('snippetContent').style.display = 'block';
     document.querySelector('.user-list-body').innerHTML = ""
-    fetch('http://localhost:8080/getallcustomerforadmin', {
+    fetch('https://visionary-audio-hub-backend.onrender.com/getallcustomerforadmin', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -421,7 +421,7 @@ function DeleteUser(id) {
     };
 
     // Send a DELETE request to your server to delete the data
-    fetch("http://localhost:8080/deleteuserbyadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/deleteuserbyadmin", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -450,7 +450,7 @@ function DeleteHistory(id) {
     };
     
     // Send a DELETE request to your server to delete the data
-    fetch("http://localhost:8080/deletehistorybyadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/deletehistorybyadmin", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -493,7 +493,7 @@ function DisplayListHistory() {
     document.getElementById("event-wrapper").style.display = 'none';
     document.getElementById('update-form-admin-container').style.display = 'none';
     document.querySelector('.seller-list-body').innerHTML = "";
-    fetch("http://localhost:8080/listhistoryforadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/listhistoryforadmin", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -734,7 +734,7 @@ document.getElementById("update-form").addEventListener("submit", function (even
     };
     console.log(requestData)
 
-    fetch("http://localhost:8080/update", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/update", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -824,7 +824,7 @@ document.getElementById("admin-wrapper").addEventListener("submit", function (ev
     console.log(formData)
 
     // Send a POST request to your Go backend
-    fetch("http://localhost:8080/createadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/createadmin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -903,7 +903,7 @@ function DisplayFeedBacks() {
     document.querySelector('.display-view').style.display = 'none';
     document.getElementById("calendar").style.display = 'none';
     document.getElementById("event-wrapper").style.display = 'none';
-    fetch("http://localhost:8080/listfeedback", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/listfeedback", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -978,7 +978,7 @@ function ViewData(id, profession) {
     document.getElementById('sellersnip').style.display = 'none';
     document.getElementById("event-wrapper").style.display = 'none';
 
-    fetch("http://localhost:8080/getdataforadmin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/getdataforadmin", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -1449,7 +1449,7 @@ function BlockUser(id) {
         id,
         token:formData.token,
     }
-    fetch("http://localhost:8080/block", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/block", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -1501,7 +1501,7 @@ document.getElementById("shutdown-form").addEventListener("submit", () => {
         return
     }
 
-    fetch("http://localhost:8080/shutdown", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/shutdown", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
@@ -1631,7 +1631,7 @@ function ClearDB(collection) {
         token: formData.token,
         collection,
     }
-    fetch("http://localhost:8080/cleardb", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/cleardb", {
         method: "POST", // Use DELETE method to delete data
         headers: {
             "Content-Type": "application/json"
