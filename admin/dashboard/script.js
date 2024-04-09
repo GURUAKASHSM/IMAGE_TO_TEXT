@@ -152,7 +152,7 @@ function DisplayFeedBack() {
                         <h6 class="mb-0">${element.email}</h6>
                         <small>${element.feedback}</small>
                       </div>
-                      <img src="./images/success.png" height="17px" style="cursor:pointer" alt="Delete" class="delete-icon" onclick="deleteFeedback('${element.email}','${element.feedback}')">
+                      <img src="admin/dashboard/images/success.png" height="17px" style="cursor:pointer" alt="Delete" class="delete-icon" onclick="deleteFeedback('${element.email}','${element.feedback}')">
                     </div>
                   </li>`
                 })
@@ -271,16 +271,16 @@ function showToast(str, war, no) {
     toastContainer.style.height = 'auto';
 
     if (no == 0) {
-        image.src = './images/danger.webp';
+        image.src = 'admin/dashboard/images/danger.webp';
         toastContainer.classList.add('danger-color');
     } else if (no == 1) {
-        image.src = './images/info.svg';
+        image.src = 'admin/dashboard/images/info.svg';
         toastContainer.classList.add('info-color');
     } else if (no == 2) {
-        image.src = './images/warning.jpg';
+        image.src = 'admin/dashboard/images/warning.jpg';
         toastContainer.classList.add('warning-color');
     } else if (no == 3) {
-        image.src = './images/success.png';
+        image.src = 'admin/dashboard/images/success.png';
         toastContainer.classList.add('success-color');
     }
     title.innerHTML = `${war}`;
