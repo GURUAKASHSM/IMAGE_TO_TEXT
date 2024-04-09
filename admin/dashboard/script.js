@@ -152,7 +152,7 @@ function DisplayFeedBack() {
                         <h6 class="mb-0">${element.email}</h6>
                         <small>${element.feedback}</small>
                       </div>
-                      <img src="admin/dashboard/images/success.png" height="17px" style="cursor:pointer" alt="Delete" class="delete-icon" onclick="deleteFeedback('${element.email}','${element.feedback}')">
+                      <img src="dashboard/images/success.png" height="17px" style="cursor:pointer" alt="Delete" class="delete-icon" onclick="deleteFeedback('${element.email}','${element.feedback}')">
                     </div>
                   </li>`
                 })
