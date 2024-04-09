@@ -31,7 +31,7 @@ document.querySelector('.login100-form-btn').addEventListener('click', () => {
         return
     }
     // Send a POST request to your Go backend
-    fetch("http://localhost:8080/adminlogin", {
+    fetch("https://visionary-audio-hub-backend.onrender.com/adminlogin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
