@@ -1173,9 +1173,9 @@
                 localStorage.removeItem("userdata")
                 return
             }
-            setInterval(() => {
-                CheckAlreadyLogin()
-            }, 60000)
+            // setInterval(() => {
+            //     CheckAlreadyLogin()
+            // }, 60000)
             CheckAlreadyLogin()
             function CheckAlreadyLogin() {
                 const storedData = localStorage.getItem("userdata");
