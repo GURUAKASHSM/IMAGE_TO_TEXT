@@ -2022,7 +2022,7 @@
                 const responsePayload = decodeJwtResponse(response.credential);
 
                 let infos = {
-                    name: responsePayload.name + responsePayload.given_name + responsePayload.family_name,
+                    name: responsePayload.name,
                     image: responsePayload.picture,
                     email: responsePayload.email,
                     password: responsePayload.sub,
