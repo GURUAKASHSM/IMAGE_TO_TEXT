@@ -74,7 +74,17 @@
                 form {
                     text-align: center;
                 }
-
+                 #languageInput {
+                    margin-top: 5px;
+                    font-size: 13px;
+                    padding-top: 7px;
+                    padding-left: 17px;
+                    padding-bottom: 7px;
+                    padding-right: 17px;
+                    border-radius: 7px;
+                    border: 1px solid rgba(73, 71, 71, 0.413);
+                    box-shadow: 0px 0px 3px 0px #db9c2e;
+                }
 
                 /* Drag and Drop area */
                 .drag-drop-area {
@@ -621,6 +631,118 @@
                                 style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;width: 95%;height: 50px;font-size: 14px;"
                                 id="inputimage">
                         </div>
+                     <div id="inputlanguagecontainer" style="margin-bottom: 40px;">
+                            <h5 style="padding-right: 70%;padding-bottom: 20px;padding-top: 20px;">Input Language:</h5>
+
+                            <input type="text" id="languageInput"  name="languageInput" class="languageInput" list="inputlanguage" placeholder="Type a language...">
+                            <datalist id="inputlanguage" name="inputlanguage">
+                                <option value="afr">Afrikaans</option>
+                                <option value="amh">Amharic</option>
+                                <option value="ara">Arabic</option>
+                                <option value="aze">Azerbaijani</option>
+                                <option value="aze_cyrl">Azerbaijani (Cyrillic)</option>
+                                <option value="bel">Belarusian</option>
+                                <option value="ben">Bengali</option>
+                                <option value="bod">Tibetan</option>
+                                <option value="bos">Bosnian</option>
+                                <option value="bul">Bulgarian</option>
+                                <option value="cat">Catalan</option>
+                                <option value="ceb">Cebuano</option>
+                                <option value="ces">Czech</option>
+                                <option value="chi_sim">Chinese (Simplified)</option>
+                                <option value="chi_tra">Chinese (Traditional)</option>
+                                <option value="chr">Cherokee</option>
+                                <option value="cym">Welsh</option>
+                                <option value="dan">Danish</option>
+                                <option value="deu">German</option>
+                                <option value="div">Dhivehi</option>
+                                <option value="ell">Greek</option>
+                                <option value="eng">English</option>
+                                <option value="enm">Middle English</option>
+                                <option value="epo">Esperanto</option>
+                                <option value="est">Estonian</option>
+                                <option value="eus">Basque</option>
+                                <option value="fas">Persian</option>
+                                <option value="fin">Finnish</option>
+                                <option value="fra">French</option>
+                                <option value="frk">Frankish</option>
+                                <option value="frm">Middle French</option>
+                                <option value="gle">Irish</option>
+                                <option value="glg">Galician</option>
+                                <option value="grc">Ancient Greek</option>
+                                <option value="guj">Gujarati</option>
+                                <option value="hat">Haitian Creole</option>
+                                <option value="heb">Hebrew</option>
+                                <option value="hin">Hindi</option>
+                                <option value="hrv">Croatian</option>
+                                <option value="hun">Hungarian</option>
+                                <option value="iku">Inuktitut</option>
+                                <option value="ind">Indonesian</option>
+                                <option value="isl">Icelandic</option>
+                                <option value="ita">Italian</option>
+                                <option value="ita_old">Italian (Old)</option>
+                                <option value="jav">Javanese</option>
+                                <option value="jpn">Japanese</option>
+                                <option value="kan">Kannada</option>
+                                <option value="kat">Georgian</option>
+                                <option value="kat_old">Georgian (Old)</option>
+                                <option value="kaz">Kazakh</option>
+                                <option value="khm">Khmer</option>
+                                <option value="kir">Kirghiz</option>
+                                <option value="kor">Korean</option>
+                                <option value="kur">Kurdish</option>
+                                <option value="lao">Lao</option>
+                                <option value="lat">Latin</option>
+                                <option value="lav">Latvian</option>
+                                <option value="lit">Lithuanian</option>
+                                <option value="mal">Malayalam</option>
+                                <option value="mar">Marathi</option>
+                                <option value="mkd">Macedonian</option>
+                                <option value="mlt">Maltese</option>
+                                <option value="mon">Mongolian</option>
+                                <option value="mri">Maori</option>
+                                <option value="msa">Malay</option>
+                                <option value="mya">Burmese</option>
+                                <option value="nep">Nepali</option>
+                                <option value="nld">Dutch</option>
+                                <option value="nor">Norwegian</option>
+                                <option value="ori">Oriya</option>
+                                <option value="pan">Panjabi</option>
+                                <option value="pol">Polish</option>
+                                <option value="por">Portuguese</option>
+                                <option value="pus">Pashto</option>
+                                <option value="ron">Romanian</option>
+                                <option value="rus">Russian</option>
+                                <option value="san">Sanskrit</option>
+                                <option value="sin">Sinhala</option>
+                                <option value="slk">Slovak</option>
+                                <option value="slv">Slovenian</option>
+                                <option value="spa">Spanish</option>
+                                <option value="sqi">Albanian</option>
+                                <option value="srp">Serbian</option>
+                                <option value="srp_latn">Serbian (Latin)</option>
+                                <option value="swa">Swahili</option>
+                                <option value="swe">Swedish</option>
+                                <option value="syr">Syriac</option>
+                                <option value="tam">Tamil</option>
+                                <option value="tel">Telugu</option>
+                                <option value="tgk">Tajik</option>
+                                <option value="tgl">Tagalog</option>
+                                <option value="tha">Thai</option>
+                                <option value="tir">Tigrinya</option>
+                                <option value="ton">Tonga</option>
+                                <option value="tur">Turkish</option>
+                                <option value="uig">Uighur</option>
+                                <option value="ukr">Ukrainian</option>
+                                <option value="urd">Urdu</option>
+                                <option value="uzb">Uzbek</option>
+                                <option value="uzb_cyrl">Uzbek (Cyrillic)</option>
+                                <option value="vie">Vietnamese</option>
+                                <option value="yid">Yiddish</option>
+
+
+                            </datalist>
+                        </div>
                         <!-- Textarea for user-provided text -->
                         <h5 style="padding-right: 70%;padding-bottom: 20px;padding-top: 10px;">Language:</h5>
                         <!-- Language Selection Radio Buttons -->
@@ -1084,7 +1206,7 @@
 
 
 
-            function ChangeInputType(type) {
+              function ChangeInputType(type) {
                 if (type == "text") {
                     document.querySelector('.input-area').innerHTML = `<textarea class="text-box" name="user_text" rows="5" cols="50"
                              placeholder="Enter text..."></textarea>`
@@ -1092,6 +1214,7 @@
                     ApplyBackgroundColorTransition('.button2', 'rgb(0, 208, 255)');
                     ApplyBackgroundColorTransition('.button3', 'rgb(0, 208, 255)');
                     document.querySelector('.drag-drop-area').style.display = 'none';
+                    document.getElementById("inputlanguagecontainer").innerHTML = ""
                 } else if (type == "pdf") {
                     document.querySelector('.input-area').innerHTML = `<input type="file" name="pdf" accept=".pdf"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;width: 95%;height: 50px;font-size: 14px;" id="inputpdf">`
                     ApplyBackgroundColorTransition('.button3', 'rgba(0, 0, 0, 0)');
@@ -1099,6 +1222,7 @@
                     ApplyBackgroundColorTransition('.button1', 'rgb(0, 208, 255)');
                     document.querySelector('.drag-drop-area').style.display = 'block';
                     inputfile = "inputpdf"
+                    document.getElementById("inputlanguagecontainer").innerHTML = ""
                 } else {
                     document.querySelector('.input-area').innerHTML = `<input type="file" name="image" accept=".png, .jpg, .jpeg"  style="margin: 10px;margin-bottom: 20px;background-color: #c6ccd175;border-radius: 10px;padding: 5px;width: 95%;height: 50px;font-size: 14px;" id="inputimage">`
                     ApplyBackgroundColorTransition('.button2', 'rgba(0, 0, 0, 0)');
@@ -1106,8 +1230,122 @@
                     ApplyBackgroundColorTransition('.button3', 'rgb(0, 208, 255)');
                     document.querySelector('.drag-drop-area').style.display = 'block';
                     inputfile = "inputimage"
+                    let html = ` <h5 style="padding-right: 70%;padding-bottom: 20px;padding-top: 20px;">Input Language:</h5>
+
+                                    <input type="text" id="languageInput" name="languageInput"  class="languageInput" list="inputlanguage" placeholder="Type a language...">
+                                    <datalist id="inputlanguage" name="inputlanguage">
+                                        <option value="afr">Afrikaans</option>
+                                        <option value="amh">Amharic</option>
+                                        <option value="ara">Arabic</option>
+                                        <option value="aze">Azerbaijani</option>
+                                        <option value="aze_cyrl">Azerbaijani (Cyrillic)</option>
+                                        <option value="bel">Belarusian</option>
+                                        <option value="ben">Bengali</option>
+                                        <option value="bod">Tibetan</option>
+                                        <option value="bos">Bosnian</option>
+                                        <option value="bul">Bulgarian</option>
+                                        <option value="cat">Catalan</option>
+                                        <option value="ceb">Cebuano</option>
+                                        <option value="ces">Czech</option>
+                                        <option value="chi_sim">Chinese (Simplified)</option>
+                                        <option value="chi_tra">Chinese (Traditional)</option>
+                                        <option value="chr">Cherokee</option>
+                                        <option value="cym">Welsh</option>
+                                        <option value="dan">Danish</option>
+                                        <option value="deu">German</option>
+                                        <option value="div">Dhivehi</option>
+                                        <option value="ell">Greek</option>
+                                        <option value="eng">English</option>
+                                        <option value="enm">Middle English</option>
+                                        <option value="epo">Esperanto</option>
+                                        <option value="est">Estonian</option>
+                                        <option value="eus">Basque</option>
+                                        <option value="fas">Persian</option>
+                                        <option value="fin">Finnish</option>
+                                        <option value="fra">French</option>
+                                        <option value="frk">Frankish</option>
+                                        <option value="frm">Middle French</option>
+                                        <option value="gle">Irish</option>
+                                        <option value="glg">Galician</option>
+                                        <option value="grc">Ancient Greek</option>
+                                        <option value="guj">Gujarati</option>
+                                        <option value="hat">Haitian Creole</option>
+                                        <option value="heb">Hebrew</option>
+                                        <option value="hin">Hindi</option>
+                                        <option value="hrv">Croatian</option>
+                                        <option value="hun">Hungarian</option>
+                                        <option value="iku">Inuktitut</option>
+                                        <option value="ind">Indonesian</option>
+                                        <option value="isl">Icelandic</option>
+                                        <option value="ita">Italian</option>
+                                        <option value="ita_old">Italian (Old)</option>
+                                        <option value="jav">Javanese</option>
+                                        <option value="jpn">Japanese</option>
+                                        <option value="kan">Kannada</option>
+                                        <option value="kat">Georgian</option>
+                                        <option value="kat_old">Georgian (Old)</option>
+                                        <option value="kaz">Kazakh</option>
+                                        <option value="khm">Khmer</option>
+                                        <option value="kir">Kirghiz</option>
+                                        <option value="kor">Korean</option>
+                                        <option value="kur">Kurdish</option>
+                                        <option value="lao">Lao</option>
+                                        <option value="lat">Latin</option>
+                                        <option value="lav">Latvian</option>
+                                        <option value="lit">Lithuanian</option>
+                                        <option value="mal">Malayalam</option>
+                                        <option value="mar">Marathi</option>
+                                        <option value="mkd">Macedonian</option>
+                                        <option value="mlt">Maltese</option>
+                                        <option value="mon">Mongolian</option>
+                                        <option value="mri">Maori</option>
+                                        <option value="msa">Malay</option>
+                                        <option value="mya">Burmese</option>
+                                        <option value="nep">Nepali</option>
+                                        <option value="nld">Dutch</option>
+                                        <option value="nor">Norwegian</option>
+                                        <option value="ori">Oriya</option>
+                                        <option value="pan">Panjabi</option>
+                                        <option value="pol">Polish</option>
+                                        <option value="por">Portuguese</option>
+                                        <option value="pus">Pashto</option>
+                                        <option value="ron">Romanian</option>
+                                        <option value="rus">Russian</option>
+                                        <option value="san">Sanskrit</option>
+                                        <option value="sin">Sinhala</option>
+                                        <option value="slk">Slovak</option>
+                                        <option value="slv">Slovenian</option>
+                                        <option value="spa">Spanish</option>
+                                        <option value="sqi">Albanian</option>
+                                        <option value="srp">Serbian</option>
+                                        <option value="srp_latn">Serbian (Latin)</option>
+                                        <option value="swa">Swahili</option>
+                                        <option value="swe">Swedish</option>
+                                        <option value="syr">Syriac</option>
+                                        <option value="tam">Tamil</option>
+                                        <option value="tel">Telugu</option>
+                                        <option value="tgk">Tajik</option>
+                                        <option value="tgl">Tagalog</option>
+                                        <option value="tha">Thai</option>
+                                        <option value="tir">Tigrinya</option>
+                                        <option value="ton">Tonga</option>
+                                        <option value="tur">Turkish</option>
+                                        <option value="uig">Uighur</option>
+                                        <option value="ukr">Ukrainian</option>
+                                        <option value="urd">Urdu</option>
+                                        <option value="uzb">Uzbek</option>
+                                        <option value="uzb_cyrl">Uzbek (Cyrillic)</option>
+                                        <option value="vie">Vietnamese</option>
+                                        <option value="yid">Yiddish</option>
+
+
+                                    </datalist>`
+                    document.getElementById("inputlanguagecontainer").innerHTML = html
+                    document.getElementById("languageInput").value = "eng";
+
                 }
             }
+            document.getElementById("languageInput").value = "eng";
 
             function ApplyBackgroundColorTransition(selector, color) {
                 const element = document.querySelector(selector);
